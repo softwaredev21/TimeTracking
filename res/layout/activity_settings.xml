@@ -1,0 +1,130 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".SettingsActivity" >
+
+    <TextView
+        android:id="@+id/textviewTT_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/time_tracker_settings_tv"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editTextKimaiPath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textview_Path_Text"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/textview_Path_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextKimaiPath"
+        android:layout_below="@+id/textviewTT_Text"
+        android:layout_marginTop="42dp"
+        android:text="@string/path_to_kimai_tv_str"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <CheckBox
+        android:id="@+id/checkBoxAcceptAllSsl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonSaveSettings"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:text="@string/ssl_cert_accept" />
+
+    <Button
+        android:id="@+id/buttonSaveSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:onClick="onSaveButtonClicked"
+        android:text="@string/save_str" />
+
+    <CheckBox
+        android:id="@+id/checkboxAutologin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checkBoxAcceptAllSsl"
+        android:layout_alignLeft="@+id/checkBoxAcceptAllSsl"
+        android:text="@string/auto_login_str" />
+
+    <TextView
+        android:id="@+id/textviewFilename_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextKimaiPath"
+        android:layout_below="@+id/editTextKimaiPath"
+        android:layout_marginTop="20dp"
+        android:text="@string/standard_filename"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editTextFileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textviewFilename_Text"
+        android:layout_alignBottom="@+id/textviewFilename_Text"
+        android:layout_alignLeft="@+id/edUsername"
+        android:layout_alignRight="@+id/edUsername"
+        android:ems="10"
+        android:text="index.php" />
+
+    <TextView
+        android:id="@+id/textviewUsername_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textviewFilename_Text"
+        android:layout_below="@+id/editTextFileName"
+        android:layout_marginTop="20dp"
+        android:text="@string/username_tv_str"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textviewPassword_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textviewUsername_Text"
+        android:layout_below="@+id/textviewUsername_Text"
+        android:layout_marginTop="20dp"
+        android:text="@string/password_tv_str"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/edUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textviewUsername_Text"
+        android:layout_alignBottom="@+id/textviewUsername_Text"
+        android:layout_alignLeft="@+id/edPassword"
+        android:layout_alignRight="@+id/editTextKimaiPath"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/edPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textviewPassword_Text"
+        android:layout_alignBottom="@+id/textviewPassword_Text"
+        android:layout_toRightOf="@+id/textview_Path_Text"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+</RelativeLayout>

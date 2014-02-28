@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Kimai TT</string>
+    <string name="title_activity_settings">Einstellungen</string>
+    <string name="title_activity_info">Über</string>
+    
+    <string name="action_settings">Einstellungen</string>
+    <string name="action_login">Einloggen</string>
+    <string name="action_info">Über</string>
+    
+    <string name="ssl_webview_error_str"> <![CDATA[<h1> SSL Zertifikat ung&uumlltig </h1> <br> Es k&oumlnnen in den Einstelllungen alle Zertifikate akzeptiert werden!]]></string>
+    <string name="ssl_toast_error">SSL Zertifikat nicht akzeptiert</string>
+    <string name="no_valid_path"> <![CDATA[<h1> Kein g&uumlltiger Pfad </h1> <br> Bitte Daten in den Einstelllungen angeben!]]></string>
+    
+    <string name="username_tv_str">Login:</string>
+    <string name="path_to_kimai_tv_str">Pfad zu Kimai:</string>
+    <string name="password_tv_str">Passwort:</string>
+    <string name="ssl_cert_accept">Alle SSL Zertifikate akzeptieren</string>
+    <string name="auto_login_str">Auto-Login einschalten</string>
+    <string name="save_str">Einstellungen speichern</string>
+    <string name="time_tracker_settings_tv">Time Tracker Einstellungen</string>
+    <string name="standard_filename">Dateiname:</string>
+    <string name="save_settings_succ">Einstellungen erfolgreich gespeichert</string>
+    
+    <string name="info_tv_devs_str">Kimai Entwickler</string>
+    <string name="created_by">entwickelt von Gregor Santner</string>
+    
+
+</resources>
