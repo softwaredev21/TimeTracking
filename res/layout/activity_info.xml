@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".InfoActivity" >
+
+    <TextView
+        android:id="@+id/textView_Kimai_Info_Str"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:background="#FFFF00"
+        android:gravity="center"
+        android:text="@string/info_tv_devs_str"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/button_kimai_browse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_Kimai_Info_Str"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:onClick="onKimaiClick"
+        android:text="http://www.kimai.org/" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_kimai_browse"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:background="#FFFF00"
+        android:gravity="center"
+        android:text="Android App"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/button_DevContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextView01"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:onClick="onAndroidAppClick"
+        android:text="@string/created_by" />
+
+    <TextView
+        android:id="@+id/textView_Version"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#DDDDEE"
+        android:gravity="center"
+        android:text="App Version \nv1.1"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>
