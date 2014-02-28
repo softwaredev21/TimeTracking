@@ -1,6 +1,6 @@
 Kimai Android App
 =======
-![alt text](https://github.com/de-live-gdev/android/blob/master/res/drawable-hdpi/ic_launcher.png "App Logo")
+![App Logo](https://github.com/de-live-gdev/android/blob/master/res/drawable-hdpi/ic_launcher.png?raw=true "App Logo")
 
 
 ## Deutsch / German
