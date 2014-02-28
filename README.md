@@ -32,14 +32,16 @@ Application License: **GPLv3**
 * Google Play Store: https://play.google.com/store/apps/details?id=de.live.gdev.timetracker
 * F-Droid: Soon
 
+## Developer Info
+Android app created by Gregor Santner, developer from Austria*
+
+
+*(not where the kangaraoos come from)
+
 
 ## Screenshots
 ![Kimai app screen](https://github.com/de-live-gdev/android/blob/master/.readme-pics/screen2.png?raw=true "App screen")  
 ![Kimai settings screen](https://github.com/de-live-gdev/android/blob/master/.readme-pics/screen4.png?raw=true "Settings screen")
 ![Kimai app screen](https://github.com/de-live-gdev/android/blob/master/.readme-pics/screen1.png?raw=true "App screen")   
 
-## Developer Info
-Android app created by Gregor Santner, Developer from Austria*
 
-
-*(not where the kangaraoos come from)
