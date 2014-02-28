@@ -36,7 +36,7 @@ Application License: **GPLv3**
 Android app created by Gregor Santner, developer from Austria*
 
 
-*(not where the kangaraoos come from)
+*(not where the kangaroos come from)
 
 
 ## Screenshots
