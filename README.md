@@ -36,3 +36,4 @@ Application License: **GPLv3**
 ## Screenshots
 ![Kimai app screen](https://github.com/de-live-gdev/android/blob/master/.readme-pics/screen2.png?raw=true "App screen")  
 ![Kimai settings screen](https://github.com/de-live-gdev/android/blob/master/.readme-pics/screen4.png?raw=true "Settings screen")
+![Kimai app screen](https://github.com/de-live-gdev/android/blob/master/.readme-pics/screen1.png?raw=true "App screen")  
