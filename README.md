@@ -1,6 +1,5 @@
-Kimai Android App
+Kimai Android App ![App Logo](https://github.com/de-live-gdev/android/blob/master/res/drawable-hdpi/ic_launcher.png?raw=true "App Logo")
 =======
-![App Logo](https://github.com/de-live-gdev/android/blob/master/res/drawable-hdpi/ic_launcher.png?raw=true "App Logo")
 
 
 ## Deutsch / German
