@@ -2,7 +2,7 @@
 =======
 
 
-## Deutsch / German
+## Deutsch
 Android-App für die Zeitmanagment Anwendung Kimai.  
 Diese App vereinfacht die mobile Verwendung einer bestehende Kimai Installation.
 
@@ -15,7 +15,7 @@ und Darstellung variert also von Gerät zu Gerät.
 
 Lizenz: **GPLv3**
 
-## Englisch / English
+## English
 App for the time managment application Kimai.  
 This app makes mobile tracking and logging into your kimai existing installation easier.
 
@@ -26,11 +26,16 @@ The browser component, which is included into Android is used for displaying,
 so your experience may vary depending on your device and the used version of Android.
 
 
-Application License: **GPLv3**
+License: **GPLv3**
 
 ## Published
-* Google Play Store: https://play.google.com/store/apps/details?id=de.live.gdev.timetracker
-* F-Droid: Soon
+* Google Play Store: https://play.google.com/store/apps/details?id=de.live.gdev.timetracker  
+* F-Droid: Soon  
+
+###Versions
+* v1.0: 11. Jan 2014
+* v1.1: 12. Jan 2014
+* v1.2: 28. Feb 2014
 
 ## Developer Info
 Android app created by Gregor Santner, developer from Austria*
