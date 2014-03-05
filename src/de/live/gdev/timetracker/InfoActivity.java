@@ -1,13 +1,10 @@
 package de.live.gdev.timetracker;
 
-import java.util.GregorianCalendar;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,24 +41,11 @@ public class InfoActivity extends Activity {
 	
 	public void onAndroidAppClick(View v)
 	{
-		String body = "Date = " + GregorianCalendar.getInstance().getTime().toLocaleString();
 		try {
-			PackageInfo info = manager.getPackageInfo(this.getPackageName(), 0);
-			body += "\nVersionCode = " + info.versionCode +
-					"\nVersionName = "  + info.versionName+
-					"\nPackageName = " + info.packageName +
-					"\nAndroidVersion = " + Build.VERSION.RELEASE.toString() +
-					"\n\n";
+			Uri uri = Uri.parse("https://github.com/kimai/android");
+			Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+			startActivity(intent);
 		} catch (Exception e) {
 		}
-		body += "Kimai for Android app reply:\n\n\n";
-		
-		String mail = "mailto:" + Uri.encode("gdev@live.de");
-               mail+= "?subject=" + Uri.encode("Kimai Android Application");
-               mail+= "&body=" + Uri.encode(body);
-        
-	    Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse(mail));
-	    startActivity(intent);
 	}
-
 }
