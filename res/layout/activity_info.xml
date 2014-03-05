@@ -60,7 +60,7 @@
         android:layout_centerHorizontal="true"
         android:background="#DDDDEE"
         android:gravity="center"
-        android:text="App Version \nv1.1"
+        android:text="App Version \nvA.b"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
