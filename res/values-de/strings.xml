@@ -8,6 +8,7 @@
     <string name="action_settings">Einstellungen</string>
     <string name="action_login">Einloggen</string>
     <string name="action_info">Über</string>
+    <string name="shared_pref">de.live.gdev.timetracker</string>
     
     <string name="ssl_webview_error_str"> <![CDATA[<h1> SSL Zertifikat ung&uumlltig </h1> <br> Es k&oumlnnen in den Einstelllungen alle Zertifikate akzeptiert werden!]]></string>
     <string name="ssl_toast_error">SSL Zertifikat nicht akzeptiert</string>
