@@ -1,16 +1,20 @@
-![App Logo](https://github.com/de-live-gdev/android/blob/master/res/drawable-hdpi/ic_launcher.png?raw=true "App Logo") Kimai Android app
+![App Logo](https://github.com/de-live-gdev/android/blob/master/res/drawable-hdpi/ic_launcher.png?raw=true "App Logo") Kimai for Android
 =======
 
+## Developer Info
+Android app created by Gregor Santner, 2014
 
 ## Deutsch
 Android-App für die Zeitmanagment Anwendung Kimai.  
 Diese App vereinfacht die mobile Verwendung einer bestehende Kimai Installation.
 
 
-Alles natürlich werbefrei.  
-Du kannst diese App weitergeben, und empfehlen ohne Einschränkungen.  
-Es wird als Basis die Android-Browser Komponente verwendet, die Geschwindigkeit   
-und Darstellung variert also von Gerät zu Gerät.
+Diese App wurde entwickelt um die mobile Verwendung einer bestehenden Kimai Installation zu vereinfachen.
+In den Einstellungen muss die URL, der Benutzername und das Passwort eingetragen sein, falls ein automatischer Login bei Programmstart gewünscht wird (Zweck der App) das dazugehörige Häckchen setzen und speichern.
+
+Da es immer sehr umständlich ist extra den Browser öffnen zu müssen, die Seite zu laden, Daten eingeben und dann endlich eine Eintragung zu machen beschleunigt die App eine Eintragung.
+
+Alles ist natürlich WERBEFREI, und wurde in der Freizeit UNENTGELTLICH entwickelt.
 
 
 Lizenz: **GPLv3**
@@ -28,21 +32,11 @@ so your experience may vary depending on your device and the used version of And
 
 License: **GPLv3**
 
-## Published
-* Google Play Store: https://play.google.com/store/apps/details?id=de.live.gdev.timetracker  
-* F-Droid: Soon  
-
 ###Versions
 * v1.0: 11. Jan 2014
-* v1.1: 12. Jan 2014
-* v1.2: 28. Feb 2014
-
-## Developer Info
-Android app created by Gregor Santner, developer from Austria*
-
-
-*(not where the kangaroos come from)
-
+* v1.01: 12. Jan 2014
+* v1.02: 28. Feb 2014
+* v1.02a: 19. May 2014
 
 ## Screenshots
 ![Kimai app screen](https://github.com/de-live-gdev/android/blob/master/.readme-pics/screen2.png?raw=true "App screen")  

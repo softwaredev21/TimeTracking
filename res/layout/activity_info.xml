@@ -52,7 +52,7 @@
         android:onClick="onAndroidAppClick"
         android:text="@string/created_by" />
 
-    <TextView
+    <Button
         android:id="@+id/textView_Version"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -60,6 +60,7 @@
         android:layout_centerHorizontal="true"
         android:background="#DDDDEE"
         android:gravity="center"
+        android:onClick="onVersionClicked"
         android:text="App Version \nvA.b"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 

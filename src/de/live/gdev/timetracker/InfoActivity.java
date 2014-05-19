@@ -13,19 +13,19 @@ import android.widget.TextView;
 @SuppressWarnings("deprecation")
 public class InfoActivity extends Activity {
 
-	TextView tv;
+	Button verionField;
 	PackageManager manager;
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_info);
 		((Button) this.findViewById(R.id.button_kimai_browse)).setBackgroundDrawable(null);
 		((Button) this.findViewById(R.id.button_DevContact)).setBackgroundDrawable(null);	
-		this.tv = (TextView) this.findViewById(R.id.textView_Version);
+		this.verionField = (Button) this.findViewById(R.id.textView_Version);
 		this.manager = this.getPackageManager();
 		
 		try {
 			PackageInfo info = manager.getPackageInfo(this.getPackageName(), 0);
-			this.tv.setText("App Version \nv" + info.versionName);
+			this.verionField.setText("App Version \nv" + info.versionName);
 		} catch (Exception e) {
 		}
 	}
@@ -40,6 +40,16 @@ public class InfoActivity extends Activity {
 	}
 	
 	public void onAndroidAppClick(View v)
+	{
+		try {
+			Uri uri = Uri.parse("https://github.com/de-live-gdev");
+			Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+			startActivity(intent);
+		} catch (Exception e) {
+		}
+	}
+	
+	public void onVersionClicked(View v)
 	{
 		try {
 			Uri uri = Uri.parse("https://github.com/kimai/android");
