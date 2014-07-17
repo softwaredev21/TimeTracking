@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.media.audiofx.BassBoost.Settings;
 import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ public class MainActivity extends Activity
 
 	boolean autoLogin;
 	boolean sslAccept;
+	String pNr;
 	String username;
 	String password;
 	String path;
@@ -73,12 +75,13 @@ public class MainActivity extends Activity
 	
 	public void reload(boolean forced)
 	{
-		this.username = pref.getString("username", "");
-		this.password = pref.getString("password", "");
-		this.filename = pref.getString("filename", "index.php");
-		this.path 	  = pref.getString("path", "");
-		this.autoLogin= pref.getBoolean("autologin", false);
-		this.sslAccept = pref.getBoolean("sslAccept", false);
+		this.pNr = SettingsActivity.PROFILE_APPEND[pref.getInt(SettingsActivity.ACTPROFILE_PREF, 0)];
+		this.username = pref.getString(SettingsActivity.USERNAME_PREF+pNr, "");
+		this.password = pref.getString(SettingsActivity.PASSWORD_PREF+pNr, "");
+		this.filename = pref.getString(SettingsActivity.FILENAME_PREF+pNr, "index.php");
+		this.path 	  = pref.getString(SettingsActivity.PATH_PREF+pNr, "");
+		this.autoLogin= pref.getBoolean(SettingsActivity.AUTOLOGIN_PREF+pNr, false);
+		this.sslAccept = pref.getBoolean(SettingsActivity.SSLACCEPT_PREF+pNr, false);
 		try
 		{
 			this.url = Uri.parse(this.path+this.filename);
