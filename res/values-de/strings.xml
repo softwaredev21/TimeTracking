@@ -19,10 +19,14 @@
     <string name="password_tv_str">Passwort:</string>
     <string name="ssl_cert_accept">Alle SSL Zertifikate akzeptieren</string>
     <string name="auto_login_str">Auto-Login einschalten</string>
-    <string name="save_str">Einstellungen speichern</string>
-    <string name="time_tracker_settings_tv">Time Tracker Einstellungen</string>
+    <string name="save_str">Profil speichern</string>
+    <string name="time_tracker_settings_tv">Time Tracker\nEinstellungen</string>
     <string name="standard_filename">Dateiname:</string>
-    <string name="save_settings_succ">Einstellungen erfolgreich gespeichert</string>
+    <string name="save_settings_succ">Einstellungen erfolgreich gespeichert</string>    
+    <string name="profileSelection_str">Profil Auswahl</string>    
+    <string name="profileDefault">Standard</string>    
+    <string name="profile2">Profil 2</string>    
+    <string name="profile3">Profil 3</string>
     
     <string name="info_tv_devs_str">Kimai Entwickler</string>
     <string name="created_by">entwickelt von Gregor Santner</string>
