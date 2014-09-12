@@ -24,7 +24,7 @@ import android.widget.Toast;
 @SuppressLint("SetJavaScriptEnabled")
 public class MainActivity extends Activity 
 {
-	private static final int SETTINGS_ACTIVITY = 15;
+	private static final int SETTINGS_ACTIVITY_ID = 15;
 	WebView webView;
 	SharedPreferences pref;
 
@@ -37,6 +37,7 @@ public class MainActivity extends Activity
 	String filename;
 	Uri url;
 	
+	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
@@ -107,7 +108,7 @@ public class MainActivity extends Activity
 		}
 	}
 	
-	
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
 		switch(item.getItemId())
@@ -115,7 +116,7 @@ public class MainActivity extends Activity
 			case R.id.action_settings:
 			{
 				Intent i = new Intent(this, SettingsActivity.class);
-				startActivityForResult(i, SETTINGS_ACTIVITY);
+				startActivityForResult(i, SETTINGS_ACTIVITY_ID);
 			}break;
 			case R.id.action_info:
 			{
@@ -131,11 +132,12 @@ public class MainActivity extends Activity
 		return super.onOptionsItemSelected(item);
 	}
 
+	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data)
 	{
 		switch(requestCode)
 		{
-			case SETTINGS_ACTIVITY:
+			case SETTINGS_ACTIVITY_ID:
 			{
 				this.reload(false);
 			}break;
@@ -144,6 +146,7 @@ public class MainActivity extends Activity
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
 		getMenuInflater().inflate(R.menu.main, menu);

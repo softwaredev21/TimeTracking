@@ -15,6 +15,8 @@ public class InfoActivity extends Activity {
 
 	Button verionField;
 	PackageManager manager;
+	
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_info);
@@ -52,7 +54,7 @@ public class InfoActivity extends Activity {
 	public void onVersionClicked(View v)
 	{
 		try {
-			Uri uri = Uri.parse("https://github.com/kimai/android");
+			Uri uri = Uri.parse("https://github.com/de-live-gdev/kimai-android");
 			Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 			startActivity(intent);
 		} catch (Exception e) {
