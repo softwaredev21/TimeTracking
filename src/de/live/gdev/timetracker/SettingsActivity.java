@@ -41,6 +41,7 @@ public class SettingsActivity extends Activity implements OnCheckedChangeListene
 	private int[] profileIds = new int[3];
 	private int actProfile;
 	
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_settings);
