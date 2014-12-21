@@ -14,20 +14,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="700dp"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin" >
-
-            <TextView
-                android:id="@+id/textviewTT_Text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:text="@string/time_tracker_settings_tv"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_height="540dp" >
 
             <EditText
                 android:id="@+id/editTextKimaiPath"
@@ -44,8 +31,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/editTextKimaiPath"
-                android:layout_below="@+id/textviewTT_Text"
-                android:layout_marginTop="42dp"
                 android:text="@string/path_to_kimai_tv_str"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -175,7 +160,6 @@
                 android:id="@+id/buttonSaveSettings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_below="@+id/radioProfiles"
                 android:layout_centerHorizontal="true"
                 android:onClick="onSaveButtonClicked"

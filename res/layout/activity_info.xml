@@ -9,41 +9,19 @@
     tools:context=".InfoActivity" >
 
     <TextView
-        android:id="@+id/textView_Kimai_Info_Str"
+        android:id="@+id/TextView_AndroidAppString"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
-        android:background="#FFFF00"
-        android:gravity="center"
-        android:text="@string/info_tv_devs_str"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <Button
-        android:id="@+id/button_kimai_browse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView_Kimai_Info_Str"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:onClick="onKimaiClick"
-        android:text="http://www.kimai.org/" />
-
-    <TextView
-        android:id="@+id/TextView_AndroidAppString"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button_kimai_browse"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:background="#FFFF00"
+        android:background="#22FF22"
         android:gravity="center"
         android:text="Android App"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
-        android:id="@+id/button_DevContact"
+        android:id="@+id/button_kimai_browse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/TextView_AndroidAppString"
@@ -52,16 +30,38 @@
         android:onClick="onAndroidAppClick"
         android:text="@string/created_by" />
 
+    <TextView
+        android:id="@+id/textView_Kimai_Info_Str"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_kimai_browse"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:background="#22FF22"
+        android:gravity="center"
+        android:text="@string/info_tv_devs_str"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/button_DevContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_Kimai_Info_Str"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:onClick="onKimaiClick"
+        android:text="kimai.org" />
+
     <Button
         android:id="@+id/textView_Version"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="#DDDDEE"
+        android:background="#AADDCC"
         android:gravity="center"
         android:onClick="onVersionClicked"
-        android:text="App Version \nvA.b"
+        android:text="App Version   vA.b"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 @SuppressWarnings("deprecation")
 public class InfoActivity extends Activity {
@@ -27,7 +26,7 @@ public class InfoActivity extends Activity {
 		
 		try {
 			PackageInfo info = manager.getPackageInfo(this.getPackageName(), 0);
-			this.verionField.setText("App Version \nv" + info.versionName);
+			this.verionField.setText("App Version   v" + info.versionName);
 		} catch (Exception e) {
 		}
 	}

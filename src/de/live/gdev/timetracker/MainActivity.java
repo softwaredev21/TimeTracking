@@ -6,12 +6,9 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.media.audiofx.BassBoost.Settings;
 import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.SslErrorHandler;
@@ -43,7 +40,7 @@ public class MainActivity extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		this.webView = (WebView) findViewById(R.id.webView1);
-		this.pref = this.getSharedPreferences(this.getString(R.string.shared_pref), MODE_PRIVATE);		
+		this.pref = this.getSharedPreferences(this.getString(R.string.shared_pref), MODE_PRIVATE);
 		
 		this.webView.setWebViewClient(new WebViewClient() {
 		    public void onReceivedSslError (WebView view, SslErrorHandler handler, SslError error) 
@@ -61,15 +58,15 @@ public class MainActivity extends Activity
 		});
 		
 		this.webView.setWebChromeClient(new WebChromeClient());
-        
+		
 		WebSettings settings = this.webView.getSettings();
 		settings.setJavaScriptEnabled(true);
 		settings.setDatabaseEnabled(true);
 		settings.setDomStorageEnabled(true);
 		settings.setBuiltInZoomControls(true);
-        settings.setSupportZoom(true);
-        settings.setLoadWithOverviewMode(true);
-        settings.setUseWideViewPort(true);
+		settings.setSupportZoom(true);
+		settings.setLoadWithOverviewMode(true);
+		settings.setUseWideViewPort(true);
 
 		this.reload(false);
 	}
@@ -109,6 +106,20 @@ public class MainActivity extends Activity
 	}
 	
 	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		switch(requestCode)
+		{
+			case SETTINGS_ACTIVITY_ID:
+			{
+				this.reload(false);
+			}break;
+		}
+		
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+	
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
 		switch(item.getItemId())
@@ -130,20 +141,6 @@ public class MainActivity extends Activity
 		}
 		
 		return super.onOptionsItemSelected(item);
-	}
-
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data)
-	{
-		switch(requestCode)
-		{
-			case SETTINGS_ACTIVITY_ID:
-			{
-				this.reload(false);
-			}break;
-		}
-		
-		super.onActivityResult(requestCode, resultCode, data);
 	}
 
 	@Override
