@@ -1,9 +1,12 @@
 package de.live.gdev.timetracker;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -75,6 +78,11 @@ public class SettingsActivity extends Activity implements OnCheckedChangeListene
 	
 	public void onSaveButtonClicked(View v)
 	{
+		this.saveProfile();
+	}
+	
+	public void saveProfile()
+	{
 		try
 		{
 			String p = this.path.getText().toString();
@@ -112,6 +120,27 @@ public class SettingsActivity extends Activity implements OnCheckedChangeListene
 		this.autoLogin.setChecked(pref.getBoolean(AUTOLOGIN_PREF+nr, false));
 		this.filename.setText(pref.getString(FILENAME_PREF+nr, "index.php"));
 		this.sslAccept.setChecked(pref.getBoolean(SSLACCEPT_PREF+nr, false));
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		switch(item.getItemId())
+		{
+			case R.id.action_saveprofile:
+			{
+				this.saveProfile();
+			}break;
+		}
+		
+		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		getMenuInflater().inflate(R.menu.settings, menu);
+		return true;
 	}
 	
 	private int findActProfileNr(){
