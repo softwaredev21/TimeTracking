@@ -17,29 +17,30 @@
             android:layout_height="540dp" >
 
             <EditText
-                android:id="@+id/editTextKimaiPath"
+                android:id="@+id/editTextWebappPath"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="https://mykimai.org/kimai"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/textview_Path_Text"
-                android:ems="10" />
+                android:ems="10"
+                android:inputType="textUri"
+                android:hint="@string/pathToWebapp_hint" />
 
             <TextView
                 android:id="@+id/textview_Path_Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/editTextKimaiPath"
-                android:text="@string/path_to_kimai_tv_str"
+                android:layout_alignLeft="@+id/editTextWebappPath"
+                android:text="@string/pathToWebapp_tv_str"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
                 android:id="@+id/textviewFilename_Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/editTextKimaiPath"
-                android:layout_below="@+id/editTextKimaiPath"
+                android:layout_alignLeft="@+id/editTextWebappPath"
+                android:layout_below="@+id/editTextWebappPath"
                 android:layout_marginTop="20dp"
                 android:text="@string/standard_filename"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -84,7 +85,7 @@
                 android:layout_alignBaseline="@+id/textviewUsername_Text"
                 android:layout_alignBottom="@+id/textviewUsername_Text"
                 android:layout_alignLeft="@+id/edPassword"
-                android:layout_alignRight="@+id/editTextKimaiPath"
+                android:layout_alignRight="@+id/editTextWebappPath"
                 android:ems="10" >
 
                 <requestFocus />
@@ -156,10 +157,14 @@
                     android:text="@string/profile3" />
             </RadioGroup>
 
-            <Button
+                        <Button
                 android:id="@+id/buttonSaveSettings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/save_ico"
+        		android:paddingLeft="10sp"
+        		android:paddingRight="10sp"
+        		android:drawablePadding="5sp"
                 android:layout_below="@+id/radioProfiles"
                 android:layout_centerHorizontal="true"
                 android:onClick="onSaveButtonClicked"

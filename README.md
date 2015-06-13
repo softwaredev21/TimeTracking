@@ -2,16 +2,17 @@
 =======
 
 ## General
-Android app created and maintained by Gregor Santner, 2014  
-Latest modification: 21. Dec 2014 (v1.04)  
+Android app created and maintained by Gregor Santner, 2014-  
+Latest modification: 13. Jun 2015 (v1.1)  
 License: **GPLv3**  
 
 
 ## Download
 
-* [apk-screens folder](https://github.com/de-live-gdev/kimai-android/tree/master/apk-screens)
-* [Google Play](https://play.google.com/store/apps/details?id=de.live.gdev.timetracker)
+* [~~Google Play~~](https://play.google.com/store/apps/details?id=de.live.gdev.timetracker)
 * [Release archive](https://github.com/de-live-gdev/kimai-android/releases)
+* [Your own repo](https://github.com/de-live-gdev/kimai-android/tree/master/additional/fdroid)
+* Maybe soon on offical F-Droid repo
 
 ## English description
 App for the time managment application Kimai.  
@@ -68,6 +69,10 @@ Es wird derzeit und in Zukunft keine Werbung eingeblendet.
 	<td>v1.04</td>
 	<td>21. Dec 2014</td>	
  </tr>
+<tr>
+	<td>v1.1</td>
+	<td>13. Jun 2015</td>	
+ </tr>
 </table>
 
 ## Privacy
@@ -76,8 +81,8 @@ Any other data than your entered data won't be collected or stored on your devic
 
 ## Screenshots
 
-![Kimai main screen](https://raw.githubusercontent.com/de-live-gdev/kimai-android/master/apk-screens/1.03/MainP3.png "Main screen")  
-![Kimai settings screen](https://raw.githubusercontent.com/de-live-gdev/kimai-android/master/apk-screens/1.04/SettP1_DE.png "Settings screen")  
-![Kimai info screen](https://raw.githubusercontent.com/de-live-gdev/kimai-android/master/apk-screens/1.04/InfoP_EN.png "Info screen")  
+![Kimai main screen](https://cloud.githubusercontent.com/assets/6735650/8143734/8607e812-11bb-11e5-8b69-570806a0c187.png "Main screen")  
+![Kimai settings screen](https://cloud.githubusercontent.com/assets/6735650/8143585/5b7a0e82-11b5-11e5-9c4d-dcb137548505.png "Settings screen")  
+![Kimai info screen](https://cloud.githubusercontent.com/assets/6735650/8143588/69e27216-11b5-11e5-921b-bef0e461680a.png "Info screen")  
 
 
