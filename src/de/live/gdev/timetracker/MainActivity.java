@@ -3,12 +3,16 @@ package de.live.gdev.timetracker;
 import org.apache.http.util.EncodingUtils;
 
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.net.http.SslError;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.SslErrorHandler;
@@ -18,135 +22,163 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
-@SuppressLint("SetJavaScriptEnabled")
+@SuppressLint({ "SetJavaScriptEnabled", "NewApi" })
 public class MainActivity extends Activity 
 {
-	private static final int SETTINGS_ACTIVITY_ID = 15;
+	private static boolean loadInDesktopMode = true;
 	WebView webView;
 	SharedPreferences pref;
 
-	boolean autoLogin;
-	boolean sslAccept;
-	String pNr;
-	String username;
-	String password;
-	String path;
-	String filename;
+	boolean prefAutoLogin;
+	boolean prefSslAccept;
+	String prefUsername;
+	String prefPassword;
+	String prefProfileNo;
+	String prefPath;
+	String prefFilename;
 	Uri url;
-	
+
 	@Override
-	public void onCreate(Bundle savedInstanceState)
-	{
+	@SuppressLint("JavascriptInterface")
+	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		this.webView = (WebView) findViewById(R.id.webView1);
+		this.webView = (WebView) findViewById(R.id.webView);
 		this.pref = this.getSharedPreferences(this.getString(R.string.shared_pref), MODE_PRIVATE);
-		
+
+		this.webView.setWebChromeClient(new WebChromeClient());
 		this.webView.setWebViewClient(new WebViewClient() {
-		    public void onReceivedSslError (WebView view, SslErrorHandler handler, SslError error) 
-		    {
-		        if(MainActivity.this.sslAccept)
-		        {
+		    public void onReceivedSslError (WebView view, SslErrorHandler handler, SslError error){
+		        if(MainActivity.this.prefSslAccept){
 		        	handler.proceed();
 		        }
-		        else
-		        {
+		        else{
 		        	Toast.makeText(MainActivity.this, getString(R.string.ssl_toast_error), Toast.LENGTH_SHORT).show();
-					webView.loadData(getString(R.string.ssl_webview_error_str), "text/html", "UTF-16");
+		        	webView.loadData(getString(R.string.ssl_webview_error_str), "text/html", "UTF-16");
 		        }
 		    }
 		});
 		
-		this.webView.setWebChromeClient(new WebChromeClient());
+		// Javascript interface
+    	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            this.webView.addJavascriptInterface(new JavaScriptInterface(this), "Android");
+    	}
 		
+		
+		// Apply web settings
 		WebSettings settings = this.webView.getSettings();
 		settings.setJavaScriptEnabled(true);
 		settings.setDatabaseEnabled(true);
-		settings.setDomStorageEnabled(true);
-		settings.setBuiltInZoomControls(true);
-		settings.setSupportZoom(true);
-		settings.setLoadWithOverviewMode(true);
-		settings.setUseWideViewPort(true);
+		settings.setDomStorageEnabled(true);		
+		if(loadInDesktopMode){
+			settings.setBuiltInZoomControls(true);
+			settings.setSupportZoom(true);
+			settings.setLoadWithOverviewMode(true);
+			settings.setUseWideViewPort(true);
+		}
+		
+		// ActionBar
+		ActionBar ab = this.getActionBar();
+		ab.setIcon(R.drawable.null_void);
+		
 
-		this.reload(false);
+		this.loadPreferences();
+		this.loadWebapp(this.prefAutoLogin);
 	}
 	
-	public void reload(boolean forced)
-	{
-		this.pNr = SettingsActivity.PROFILE_APPEND[pref.getInt(SettingsActivity.ACTPROFILE_PREF, 0)];
-		this.username = pref.getString(SettingsActivity.USERNAME_PREF+pNr, "");
-		this.password = pref.getString(SettingsActivity.PASSWORD_PREF+pNr, "");
-		this.filename = pref.getString(SettingsActivity.FILENAME_PREF+pNr, "index.php");
-		this.path 	  = pref.getString(SettingsActivity.PATH_PREF+pNr, "");
-		this.autoLogin= pref.getBoolean(SettingsActivity.AUTOLOGIN_PREF+pNr, false);
-		this.sslAccept = pref.getBoolean(SettingsActivity.SSLACCEPT_PREF+pNr, false);
-		try
-		{
-			this.url = Uri.parse(this.path+this.filename);
-		}catch(Exception e)
-		{
+	/**
+	 * Load webapp
+	 * @param doLogin if user should be logged in
+	 */
+	public void loadWebapp(boolean doLogin){
+		try {this.url = Uri.parse(this.prefPath+this.prefFilename);
+		}catch(Exception e){
 			url = null;
 			this.webView.loadData(this.getString(R.string.no_valid_path), "text/html", "UTF-16");
 			return;
 		}
 		
-		if(url.toString().equals("") || url.toString().equals("index.php"))
-		{
+		
+		if(url.toString().equals("") || url.toString().equals("index.php")){
 			this.webView.loadData(this.getString(R.string.no_valid_path), "text/html", "UTF-16");
 		}
-		else
-		{
+		else{
 			this.webView.loadUrl(url.toString());
-			if(this.autoLogin || forced)
-			{
-				String postData = "name=" + this.username + "&password=" + this.password;
+			if(doLogin){
+				String postData = "name=" + this.prefUsername + "&password=" + this.prefPassword;
 				this.webView.postUrl(url.toString()+ "?a=checklogin", EncodingUtils.getBytes(postData, "base64"));
 			}
 		}
 	}
 	
+	/**
+	 * Load all preferences
+	 */
+	public void loadPreferences(){
+		this.prefProfileNo= Integer.toString(pref.getInt(SettingsActivity.PREF_SELPROFILE, 0));
+		this.prefUsername = pref.getString(SettingsActivity.PREF_USERNAME+prefProfileNo, "");
+		this.prefPassword = pref.getString(SettingsActivity.PREF_PASSWORD+prefProfileNo, "");
+		this.prefPath 	  = pref.getString(SettingsActivity.PREF_PATH+prefProfileNo, "");
+		this.prefAutoLogin= pref.getBoolean(SettingsActivity.PREF_AUTOLOGIN+prefProfileNo, false);
+		this.prefSslAccept= pref.getBoolean(SettingsActivity.PREF_SSLACCEPT+prefProfileNo, false);
+		this.prefFilename = pref.getString(SettingsActivity.PREF_FILENAME, "index.php");
+	}
+	
 	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data)
-	{
-		switch(requestCode)
-		{
-			case SETTINGS_ACTIVITY_ID:
-			{
-				this.reload(false);
+	protected void onActivityResult(int requestCode, int resultCode, Intent data){
+		switch(requestCode){
+			case SettingsActivity.SETTINGS_ACTIVITY_ID:{
+				this.loadPreferences();
+				this.loadWebapp(this.prefAutoLogin);
 			}break;
 		}
-		
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 	
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item)
-	{
-		switch(item.getItemId())
-		{
-			case R.id.action_settings:
-			{
+	public boolean onOptionsItemSelected(MenuItem item){
+		switch(item.getItemId()){
+			case R.id.action_settings:{
 				Intent i = new Intent(this, SettingsActivity.class);
-				startActivityForResult(i, SETTINGS_ACTIVITY_ID);
-			}break;
-			case R.id.action_info:
-			{
+				startActivityForResult(i,  SettingsActivity.SETTINGS_ACTIVITY_ID);
+				break;}
+			case R.id.action_info:{
 				Intent i = new Intent(this, InfoActivity.class);
 				startActivity(i);
-			}break;
-			case R.id.action_login:
-			{
-				this.reload(true);
-			}break;
+				break;}
+			case R.id.action_login:{
+				this.loadWebapp(true);
+				break;}
+			case R.id.action_exit:{
+				this.finish();
+				break;}
 		}
 		
 		return super.onOptionsItemSelected(item);
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu)
-	{
+	public boolean onCreateOptionsMenu(Menu menu){
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	
+	 @Override
+	 public boolean onKeyDown(int key, KeyEvent e) {
+	     if ((key == KeyEvent.KEYCODE_BACK) && webView.canGoBack()) {
+	    	 webView.goBack();
+	         return true;
+	     }
+	     return super.onKeyDown(key, e);
+	 }
+	 
+	 /**
+	  *  Java methods from this class can be called from javascript
+	  */
+	 public class JavaScriptInterface {
+	     Context context;
+	     JavaScriptInterface(Context c) {
+	         context = c;
+	     }
+	 }
 }

@@ -9,7 +9,7 @@
     tools:context=".InfoActivity" >
 
     <TextView
-        android:id="@+id/TextView_AndroidAppString"
+        android:id="@+id/textView_androidAppString"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -21,36 +21,36 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
-        android:id="@+id/button_kimai_browse"
+        android:id="@+id/button_androidAppAuthor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/TextView_AndroidAppString"
+        android:layout_below="@+id/textView_androidAppString"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:onClick="onAndroidAppClick"
-        android:text="@string/created_by" />
+        android:onClick="onAuthorClicked"
+        android:text="@string/info_author" />
 
     <TextView
-        android:id="@+id/textView_Kimai_Info_Str"
+        android:id="@+id/textView_additionalContact"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button_kimai_browse"
+        android:layout_below="@+id/button_androidAppAuthor"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
         android:background="#22FF22"
         android:gravity="center"
-        android:text="@string/info_tv_devs_str"
+        android:text="@string/info_additionalContact"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
-        android:id="@+id/button_DevContact"
+        android:id="@+id/button_additionalContact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView_Kimai_Info_Str"
+        android:layout_below="@+id/textView_additionalContact"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:onClick="onKimaiClick"
-        android:text="kimai.org" />
+        android:onClick="onAdditionalPageClicked"
+        android:text="@string/page_additional_homepage_short" />
 
     <Button
         android:id="@+id/textView_Version"
@@ -58,7 +58,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="#AADDCC"
+        android:background="#DE0453"
+        android:textColor="#EEEEEE"
         android:gravity="center"
         android:onClick="onVersionClicked"
         android:text="App Version   vA.b"
