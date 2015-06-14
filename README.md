@@ -9,10 +9,10 @@ License: **GPLv3**
 
 ## Download
 
-* [~~Google Play~~](https://play.google.com/store/apps/details?id=de.live.gdev.timetracker)
 * [Release archive](https://github.com/de-live-gdev/kimai-android/releases)
+* [F-Droid](https://f-droid.org/repository/browse/?fdid=de.live.gdev.timetracker)
 * [Your own repo](https://github.com/de-live-gdev/kimai-android/tree/master/additional/fdroid)
-* Maybe soon on offical F-Droid repo
+* [~~Google Play~~](https://play.google.com/store/apps/details?id=de.live.gdev.timetracker)
 
 ## English description
 App for the time managment application Kimai.  
@@ -84,5 +84,9 @@ Any other data than your entered data won't be collected or stored on your devic
 ![Kimai main screen](https://cloud.githubusercontent.com/assets/6735650/8143734/8607e812-11bb-11e5-8b69-570806a0c187.png "Main screen")  
 ![Kimai settings screen](https://cloud.githubusercontent.com/assets/6735650/8143585/5b7a0e82-11b5-11e5-9c4d-dcb137548505.png "Settings screen")  
 ![Kimai info screen](https://cloud.githubusercontent.com/assets/6735650/8143588/69e27216-11b5-11e5-921b-bef0e461680a.png "Info screen")  
+
+
+## Resources
+Thanks to Sekkyumu for his great iconset: <http://sekkyumu.deviantart.com/art/Developpers-Icons-63052312>  
 
 
