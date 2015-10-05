@@ -1,17 +1,17 @@
-![App Logo](https://raw.githubusercontent.com/de-live-gdev/kimai-android/master/res/drawable-hdpi/ic_launcher.png "App Logo") Kimai TimeTracker
+![App Logo](https://raw.githubusercontent.com/de-live-gdev/kimai-android/master/app/src/main/res/drawable-hdpi/ic_launcher.png "App Logo") Kimai TimeTracker
 =======
 
 ## General
-Android app created and maintained by Gregor Santner, 2014-  
-Latest modification: 13. Jun 2015 (v1.1)  
+Latest modification: 05. Oct 2015 (v1.11)  
 License: **GPLv3**  
+Android app created and maintained by Gregor Santner (<http://de-live-gdev.github.io>), 2014-  
 
 
 ## Download
 
 * [Release archive](https://github.com/de-live-gdev/kimai-android/releases)
 * [F-Droid](https://f-droid.org/repository/browse/?fdid=de.live.gdev.timetracker)
-* [Your own repo](https://github.com/de-live-gdev/kimai-android/tree/master/additional/fdroid)
+* [Your own repo](https://gitlab.com/fdroid/fdroiddata/raw/master/metadata/de.live.gdev.timetracker.txt)
 * [~~Google Play~~](https://play.google.com/store/apps/details?id=de.live.gdev.timetracker)
 
 ## English description
@@ -44,34 +44,40 @@ Es wird derzeit und in Zukunft keine Werbung eingeblendet.
  <thead>
 	<td><b>Version</b></td>
 	<td><b>Date</b></td>
+  <td><b>Changelog</b></td>
  </thead>
  <tr>
 	<td>v1.0</td>
-	<td>11. Jan 2014</td>	
+	<td>11. Jan 2014</td>
  </tr>
  <tr>
 	<td>v1.01</td>
-	<td>12. Jan 2014</td>	
+	<td>12. Jan 2014</td>
  </tr>
  <tr>
 	<td>v1.02</td>
-	<td>28. Feb 2014</td>	
+	<td>28. Feb 2014</td>
  </tr>
  <tr>
 	<td>v1.02a</td>
-	<td>19. May 2014</td>	
+	<td>19. May 2014</td>
  </tr>
  <tr>
 	<td>v1.03</td>
-	<td>18. Jul 2014</td>	
+	<td>18. Jul 2014</td>
  </tr>
  <tr>
 	<td>v1.04</td>
-	<td>21. Dec 2014</td>	
+	<td>21. Dec 2014</td>
  </tr>
-<tr>
-	<td>v1.1</td>
-	<td>13. Jun 2015</td>	
+ <tr>
+	 <td>v1.1</td>
+   <td>13. Jun 2015</td>
+ </tr>
+ <tr>
+	 <td>v1.11</td>
+   <td>05. Oct 2015</td>
+   <td>Material Design, Gradle, Code base refactored</td>
  </tr>
 </table>
 
@@ -81,12 +87,11 @@ Any other data than your entered data won't be collected or stored on your devic
 
 ## Screenshots
 
-![Kimai main screen](https://cloud.githubusercontent.com/assets/6735650/8143734/8607e812-11bb-11e5-8b69-570806a0c187.png "Main screen")  
-![Kimai settings screen](https://cloud.githubusercontent.com/assets/6735650/8143585/5b7a0e82-11b5-11e5-9c4d-dcb137548505.png "Settings screen")  
-![Kimai info screen](https://cloud.githubusercontent.com/assets/6735650/8143588/69e27216-11b5-11e5-921b-bef0e461680a.png "Info screen")  
+![Kimai main screen](https://cloud.githubusercontent.com/assets/6735650/10274992/fcaef640-6b43-11e5-9dd0-da2771be8c29.png "Main screen")  
 
 
-## Resources
-Thanks to Sekkyumu for his great iconset: <http://sekkyumu.deviantart.com/art/Developpers-Icons-63052312>  
 
 
+Settings      |  Info screen
+:-------------------------:|:-------------------------:
+![Kimai settings screen](https://cloud.githubusercontent.com/assets/6735650/10275364/23e779fa-6b47-11e5-9a94-87138722ad43.png "Settings screen")  |  ![Kimai info screen](https://cloud.githubusercontent.com/assets/6735650/10275373/30f4521c-6b47-11e5-9ae6-cbe7d1ac4716.png "Info screen")
