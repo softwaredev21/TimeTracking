@@ -6,7 +6,6 @@ Latest modification: 05. Oct 2015 (v1.11)
 License: **GPLv3**  
 Android app created and maintained by Gregor Santner (<http://de-live-gdev.github.io>), 2014-  
 
-
 ## Download
 
 * [Release archive](https://github.com/de-live-gdev/kimai-android/releases)
@@ -47,43 +46,62 @@ Es wird derzeit und in Zukunft keine Werbung eingeblendet.
   <td><b>Changelog</b></td>
  </thead>
  <tr>
+    <td>v1.11</td>
+   <td>05. Oct 2015</td>
+   <td>Material Design, Gradle, Code base refactored</td>
+ </tr>
+ <tr>
 	<td>v1.0</td>
 	<td>11. Jan 2014</td>
+    <td></td>
+ </tr>
+ <tr>
+    <td>v1.1</td>
+   <td>13. Jun 2015</td>
+   <td></td>
+ </tr>
+ <tr>
+   <td>v1.04</td>
+   <td>21. Dec 2014</td>
+   <td></td>
+ </tr>
+ <tr>
+   <td>v1.03</td>
+   <td>18. Jul 2014</td>
+   <td></td>
+ </tr>
+ <tr>
+   <td>v1.02a</td>
+   <td>19. May 2014</td>
+   <td></td>
+ </tr>
+ <tr>
+   <td>v1.02</td>
+   <td>28. Feb 2014</td>
+   <td></td>
  </tr>
  <tr>
 	<td>v1.01</td>
 	<td>12. Jan 2014</td>
- </tr>
- <tr>
-	<td>v1.02</td>
-	<td>28. Feb 2014</td>
- </tr>
- <tr>
-	<td>v1.02a</td>
-	<td>19. May 2014</td>
- </tr>
- <tr>
-	<td>v1.03</td>
-	<td>18. Jul 2014</td>
- </tr>
- <tr>
-	<td>v1.04</td>
-	<td>21. Dec 2014</td>
- </tr>
- <tr>
-	 <td>v1.1</td>
-   <td>13. Jun 2015</td>
- </tr>
- <tr>
-	 <td>v1.11</td>
-   <td>05. Oct 2015</td>
-   <td>Material Design, Gradle, Code base refactored</td>
+    <td></td>
  </tr>
 </table>
 
 ## Privacy
 This app doesn't open connections to anywhere else than your entered kimai url.  
 Any other data than your entered data won't be collected or stored on your device.  
+
+## Donations
+<table>
+ <tr>
+	<td><a href="bitcoin:1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5?amount=0.05&label=de-live-gdev">
+    <img src="http://de-live-gdev.github.io/assets/img/personal/bitcoin/bitcoin_gdev-live-gdev_150px.png"/></a></td>
+	<td>If you like my work on <b>Kimai TimeTracker</b> and Open-Source, or just want to spend me a coke, consider a small donation to my bitcoin address:
+
+    <a href="http://de-live-gdev.github.io/about/#donate">
+    1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</a></td>
+ </tr>
+</table>
 
 ## Screenshots
 
