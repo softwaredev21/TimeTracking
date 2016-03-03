@@ -2,7 +2,7 @@
 =======
 
 ## General
-Latest modification: 05. Oct 2015 (v1.11)  
+Latest modification: 03. Mar 2016 (v1.12)  
 License: **GPLv3**  
 Android app created and maintained by Gregor Santner (<http://de-live-gdev.github.io>), 2014-  
 
@@ -46,14 +46,15 @@ Es wird derzeit und in Zukunft keine Werbung eingeblendet.
   <td><b>Changelog</b></td>
  </thead>
  <tr>
+    <td>v1.12</td>
+   <td>04. Mar 2016</td>
+   <td>Bump gradle version</td>
+ </tr>
+ <tr>
+ <tr>
     <td>v1.11</td>
    <td>05. Oct 2015</td>
    <td>Material Design, Gradle, Code base refactored</td>
- </tr>
- <tr>
-	<td>v1.0</td>
-	<td>11. Jan 2014</td>
-    <td></td>
  </tr>
  <tr>
     <td>v1.1</td>
@@ -83,6 +84,11 @@ Es wird derzeit und in Zukunft keine Werbung eingeblendet.
  <tr>
 	<td>v1.01</td>
 	<td>12. Jan 2014</td>
+    <td></td>
+ </tr>
+ <tr>
+	<td>v1.0</td>
+	<td>11. Jan 2014</td>
     <td></td>
  </tr>
 </table>
