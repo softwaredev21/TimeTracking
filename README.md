@@ -6,6 +6,7 @@ Latest modification: 03. Mar 2016 (v1.12)
 License: **GPLv3**  
 Android app created and maintained by Gregor Santner (<http://de-live-gdev.github.io>), 2014-  
 
+[![Build Status](https://travis-ci.org/de-live-gdev/kimai-android.svg?branch=master)](https://travis-ci.org/de-live-gdev/kimai-android)
 <span class="badge-githubfollow"><iframe src="https://ghbtns.com/github-btn.html?user=de-live-gdev&amp;type=follow&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe></span>
 <span class="badge-githubstar"><iframe src="https://ghbtns.com/github-btn.html?user=de-live-gdev&amp;repo=kimai-android&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></span>
 <span class="badge-bitcoin"><a href="https://de-live-gdev.github.io/donate/#donate" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span>
