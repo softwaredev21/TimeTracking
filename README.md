@@ -1,22 +1,21 @@
-![App Logo](https://raw.githubusercontent.com/de-live-gdev/kimai-android/master/app/src/main/res/drawable-hdpi/ic_launcher.png "App Logo") Kimai TimeTracker
+![App Logo](https://raw.githubusercontent.com/gsantner/kimai-android/master/app/src/main/res/drawable-hdpi/ic_launcher.png "App Logo") Kimai TimeTracker
 =======
 
 ## General
-Latest modification: 03. Mar 2016 (v1.12)  
 License: **GPLv3**  
-Android app created and maintained by Gregor Santner (<http://de-live-gdev.github.io>), 2014-  
+Android app created and maintained by Gregor Santner (<https://gsantner.github.io>), 2014-  
 
-[![Build Status](https://travis-ci.org/de-live-gdev/kimai-android.svg?branch=master)](https://travis-ci.org/de-live-gdev/kimai-android)
-<span class="badge-githubfollow"><iframe src="https://ghbtns.com/github-btn.html?user=de-live-gdev&amp;type=follow&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe></span>
-<span class="badge-githubstar"><iframe src="https://ghbtns.com/github-btn.html?user=de-live-gdev&amp;repo=kimai-android&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></span>
-<span class="badge-bitcoin"><a href="https://de-live-gdev.github.io/donate/#donate" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span>
+[![Build Status](https://travis-ci.org/gsantner/kimai-android.svg?branch=master)](https://travis-ci.org/gsantner/kimai-android)
+<span class="badge-githubfollow"><iframe src="https://ghbtns.com/github-btn.html?user=gsantner&amp;type=follow&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe></span>
+<span class="badge-githubstar"><iframe src="https://ghbtns.com/github-btn.html?user=gsantner&amp;repo=kimai-android&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></span>
+<span class="badge-bitcoin"><a href="https://gsantner.github.io/donate/#donate" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span>
 
 [![F-Droid](https://f-droid.org/wiki/images/0/06/F-Droid-button_get-it-on.png)](https://f-droid.org/repository/browse/?fdfilter=kimai&fdid=de.live.gdev.timetracker)
 
 
 ## Download
 
-* [Release archive](https://github.com/de-live-gdev/kimai-android/releases)
+* [Release archive](https://github.com/gsantner/kimai-android/releases)
 * [F-Droid](https://f-droid.org/repository/browse/?fdid=de.live.gdev.timetracker)
 * [Your own F-Droid repo](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/de.live.gdev.timetracker.txt)
 * [~~Google Play~~](https://play.google.com/store/apps/details?id=de.live.gdev.timetracker)
@@ -54,6 +53,11 @@ Es wird derzeit und in Zukunft keine Werbung eingeblendet.
 	<td><b>Date</b></td>
   <td><b>Changelog</b></td>
  </thead>
+ <tr>
+    <td>v1.13</td>
+   <td>31. May 2016</td>
+   <td></td>
+ </tr>
  <tr>
     <td>v1.12</td>
    <td>04. Mar 2016</td>
@@ -109,11 +113,11 @@ Any other data than your entered data won't be collected or stored on your devic
 ## Donations
 <table>
  <tr>
-	<td><a href="bitcoin:1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5?amount=0.05&label=de-live-gdev">
-    <img src="http://de-live-gdev.github.io/assets/img/personal/bitcoin/bitcoin_gdev-live-gdev_150px.png"/></a></td>
+	<td><a href="bitcoin:1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5?amount=0.05&label=gsantner">
+    <img src="https://gsantner.github.io/assets/img/personal/bitcoin/bitcoin_gdev-live-gdev_150px.png"/></a></td>
 	<td>If you like my work on <b>Kimai TimeTracker</b> and Open-Source, or just want to spend me a coke, consider a small donation to my bitcoin address:
 
-    <a href="http://de-live-gdev.github.io/about/#donate">
+    <a href="https://gsantner.github.io/about/#donate">
     1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</a></td>
  </tr>
 </table>
