@@ -3,8 +3,9 @@
 
     <!-- WebApp -->
     <string name="app_name" translatable="false">Kimai</string>
+    <string name="app_name2" translatable="false">Kimai Time Tracker</string>
     <string name="shared_pref" translatable="false">de.live.gdev.timetracker</string>
-    <string name="info_author">created by Gregor Santner\ngsantner.github.io/\n***REMOVED***</string>
+    <string name="info_author">created by Gregor Santner\ngsantner AT mailbox DOT org\ngsantner.github.io</string>
     <string name="info_additionalContact" translatable="false">Kimai Homepage</string>
     <string name="page_additional_homepage" translatable="false">http://www.kimai.org/</string>
     <string name="page_additional_homepage_short" translatable="false">kimai.org/</string>
@@ -40,5 +41,8 @@
     <string name="webapp_default_filename" translatable="false">index.php</string>
     <string name="edit_webapp_username_hint">username</string>
     <string name="text_hint_webapp_password">password</string>
+    <string name="android_app" translatable="false">Android App</string>
+    <string name="blog" translatable="false">Blog</string>
+    <string name="action_donate_bitcoin">Donate Bitcoin</string>
 
 </resources>

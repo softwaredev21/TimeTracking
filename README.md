@@ -2,8 +2,8 @@
 =======
 
 ## General
-License: **GPLv3**  
-Android app created and maintained by Gregor Santner (<https://gsantner.github.io>), 2014-  
+License: **GPLv3**
+Android app created and maintained by Gregor Santner (<https://gsantner.github.io>), 2014-
 
 [![Build Status](https://travis-ci.org/gsantner/kimai-android.svg?branch=master)](https://travis-ci.org/gsantner/kimai-android)
 <span class="badge-githubfollow"><iframe src="https://ghbtns.com/github-btn.html?user=gsantner&amp;type=follow&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe></span>
@@ -22,28 +22,17 @@ Android app created and maintained by Gregor Santner (<https://gsantner.github.i
 
 
 ## English description
-App for the time managment application Kimai.  
+App for the time managment application Kimai.
 This app makes mobile tracking and logging into your kimai existing installation easier.
-You have to enter the URL, username, and password of your installation, if you want to be auto logged in after application start check the appropiate box.  
+You have to enter the URL, username, and password of your installation, if you want to be auto logged in after application start check the appropiate box.
+To refresh page, long press on the green bottom button.
 
 Additonally you can switch between 3 profiles. Each of them has his own dataset.
 
 Normally you have to open your browser, go to favourites, click your kimai page, input data. Now you only have to do the last step every time you want to add entries.
 
-This app was developed under non commercial purposes.  
-Actually there are no, and there will never be advertisments.  
-
-## Deutsche Beschreibung
-Android-App für die Zeitmanagment Anwendung Kimai.  
-Diese App wurde entwickelt um die mobile Verwendung einer bestehenden Kimai Installation zu vereinfachen.
-In den Einstellungen muss die URL, der Benutzername und das Passwort eingetragen sein, falls ein automatischer Login bei Programmstart gewünscht wird (Zweck der App) das dazugehörige Häckchen setzen.
-
-Es kann dabei zwischen drei Profilen ausgewählt werden, von denen jedes einen eigenen Datensatz besitzt.
-
-Da es immer sehr umständlich ist extra den Browser öffnen zu müssen, die Seite zu laden, Daten eingeben und dann endlich eine Eintragung zu machen, beschleunigt die App eine Eintragung.  
-
-Diese App wurde in keiner kommerzieller Absicht entwickelt.  
-Es wird derzeit und in Zukunft keine Werbung eingeblendet.  
+This app was developed under non commercial purposes.
+Actually there are no, and there will never be advertisments.
 
 ## Releases
 
@@ -53,6 +42,11 @@ Es wird derzeit und in Zukunft keine Werbung eingeblendet.
 	<td><b>Date</b></td>
   <td><b>Changelog</b></td>
  </thead>
+ <tr>
+    <td>v1.3.0</td>
+   <td>22. Feb 2017</td>
+   <td>NavDrawer, more space for content</td>
+ </tr>
  <tr>
     <td>v1.2.0</td>
    <td>28. Jul 2016</td>
@@ -117,8 +111,8 @@ Es wird derzeit und in Zukunft keine Werbung eingeblendet.
 </table>
 
 ## Privacy
-This app doesn't open connections to anywhere else than your entered kimai url.  
-Any other data than your entered data won't be collected or stored on your device.  
+This app doesn't open connections to anywhere else than your entered kimai url.
+Any other data than your entered data won't be collected or stored on your device.
 
 ## Donations
 <table>
@@ -134,11 +128,14 @@ Any other data than your entered data won't be collected or stored on your devic
 
 ## Screenshots
 
-![Kimai main screen](https://cloud.githubusercontent.com/assets/6735650/10274992/fcaef640-6b43-11e5-9dd0-da2771be8c29.png "Main screen")  
+![Kimai main screen](https://cloud.githubusercontent.com/assets/6735650/23229190/a10b60cc-f93f-11e6-9762-02c7eb12acbf.png "Main screen")
 
-
-
-
-Settings      |  Info screen
-:-------------------------:|:-------------------------:
-![Kimai settings screen](https://cloud.githubusercontent.com/assets/6735650/10275364/23e779fa-6b47-11e5-9a94-87138722ad43.png "Settings screen")  |  ![Kimai info screen](https://cloud.githubusercontent.com/assets/6735650/10275373/30f4521c-6b47-11e5-9ae6-cbe7d1ac4716.png "Info screen")
+<table>
+  <tr>
+    <td> <img  src="https://cloud.githubusercontent.com/assets/6735650/23229191/a10bbcfc-f93f-11e6-9273-b42f4922d0be.png"/> </td>
+    <td> <img src="https://cloud.githubusercontent.com/assets/6735650/23229192/a12f92bc-f93f-11e6-8a07-d453376f2a20.png"/> </td>
+  </tr><tr>
+    <td> <img src="https://cloud.githubusercontent.com/assets/6735650/23229193/a13341aa-f93f-11e6-914d-79ce4ce89574.png"/> </td>
+    <td> <img src="https://cloud.githubusercontent.com/assets/6735650/23229880/33c69f4c-f942-11e6-84d7-4b2b700e26b1.png" /> </td>
+  </tr>
+</table>

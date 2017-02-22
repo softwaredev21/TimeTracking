@@ -4,25 +4,32 @@ import android.content.Intent;
 import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TextView;
 
 import org.apache.http.util.EncodingUtils;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import butterknife.OnLongClick;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static final boolean LOAD_IN_DESKTOP_MODE = true;
 
     @Bind(R.id.web_view)
@@ -31,18 +38,45 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.toolbar)
     Toolbar toolbar;
 
+    @Bind(R.id.drawer_layout)
+    DrawerLayout drawer;
+
+    @Bind(R.id.nav_view)
+    NavigationView navigationView;
+
     Profile profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Setup UI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        // Setup bars
         setSupportActionBar(toolbar);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        navigationView.getMenu().findItem(R.id.action_donate_bitcoin).setVisible(!BuildConfig.IS_GPLAY_BUILD);
         profile = Profile.getDefaultProfile(this);
+        ((TextView)navigationView.getHeaderView(0).findViewById(R.id.navheader_subtext))
+                .setText("v"+Shared.getAppVersionName(this));
+
 
         webView.setWebChromeClient(new WebChromeClient());
+        WebSettings settings = webView.getSettings();
+        settings.setJavaScriptEnabled(true);
+        settings.setDatabaseEnabled(true);
+        settings.setDomStorageEnabled(true);
+        settings.setBuiltInZoomControls(true);
+
+        if (LOAD_IN_DESKTOP_MODE) {
+            settings.setSupportZoom(true);
+            settings.setLoadWithOverviewMode(true);
+            settings.setUseWideViewPort(true);
+        }
+
+        // Apply web settings
         webView.setWebViewClient(new WebViewClient() {
             public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
                 if (profile.isAcceptAllSsl()) {
@@ -54,19 +88,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        // Apply web settings
-        WebSettings settings = webView.getSettings();
-        settings.setJavaScriptEnabled(true);
-        settings.setDatabaseEnabled(true);
-        settings.setDomStorageEnabled(true);
-
-        if (LOAD_IN_DESKTOP_MODE) {
-            settings.setBuiltInZoomControls(true);
-            settings.setSupportZoom(true);
-            settings.setLoadWithOverviewMode(true);
-            settings.setUseWideViewPort(true);
-        }
     }
 
     @Override
@@ -77,17 +98,32 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        return handleBarClick(item) || super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        handleBarClick(item);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    public boolean handleBarClick(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_settings:
+            case R.id.action_settings: {
                 startActivityForResult(new Intent(this, SettingsActivity.class), SettingsActivity.ACTIVITY_ID);
                 return true;
-            case R.id.action_login:
+            }
+            case R.id.action_login: {
                 loadWebapp(true);
                 return true;
-            case R.id.action_info:
-                startActivity(new Intent(this,InfoActivity.class));
+            }
+            case R.id.action_info: {
+                startActivity(new Intent(this, InfoActivity.class));
                 return true;
-            case R.id.action_exit:
+            }
+            case R.id.action_exit: {
                 webView.clearCache(true);
                 webView.clearFormData();
                 webView.clearHistory();
@@ -95,9 +131,21 @@ public class MainActivity extends AppCompatActivity {
                 webView.clearSslPreferences();
                 finish();
                 return true;
-
+            }
+            case R.id.action_donate_bitcoin: {
+                Shared.donateBitcoinRequest(this);
+                return true;
+            }
+            case R.id.action_homepage_additional: {
+                Shared.openWebpage(this, getString(R.string.page_additional_homepage));
+                return true;
+            }
+            case R.id.action_homepage_author: {
+                Shared.openWebpage(this, getString(R.string.page_author));
+                return true;
+            }
         }
-        return super.onOptionsItemSelected(item);
+        return false;
     }
 
     @Override
@@ -111,6 +159,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int key, KeyEvent e) {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+            return true;
+        }
         if ((key == KeyEvent.KEYCODE_BACK) && webView.canGoBack()) {
             webView.goBack();
             return true;
@@ -123,6 +175,17 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         profile.reloadSettings();
         loadWebapp(profile.isAutoLogin());
+    }
+
+    @OnClick(R.id.fab)
+    public void onFloatingActionButtonClicked(View v) {
+        drawer.openDrawer(GravityCompat.START);
+    }
+
+    @OnLongClick(R.id.fab)
+    public boolean onFloatingActionButtonLongClicked(View v){
+        loadWebapp(false);
+        return true;
     }
 
     public void loadWebapp(boolean doLogin) {

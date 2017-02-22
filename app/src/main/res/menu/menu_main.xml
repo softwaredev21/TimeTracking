@@ -1,23 +1,48 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity">
-    <item
-        android:id="@+id/action_settings"
-        android:icon="@drawable/ic_action_settings"
-        android:title="@string/action_settings"
-        app:showAsAction="always" />
-    <item
-        android:id="@+id/action_login"
-        android:icon="@drawable/ic_action_refresh"
-        android:title="@string/action_login"
-        app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/action_info"
-        android:title="@string/action_info"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_exit"
-        android:title="@string/action_exit"
-        app:showAsAction="never" />
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".MainActivity">
+
+    <group
+        android:id="@+id/nav1"
+        android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/action_login"
+            android:icon="@drawable/ic_refresh_white_48px"
+            android:title="@string/action_login"/>
+
+        <item
+            android:id="@+id/action_settings"
+            android:icon="@drawable/ic_settings_white_48px"
+            android:title="@string/action_settings"/>
+        <item
+            android:id="@+id/action_exit"
+            android:icon="@drawable/ic_clear_white_48px"
+            android:title="@string/action_exit"/>
+    </group>
+
+
+    <group
+        android:id="@+id/nav2"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/action_donate_bitcoin"
+            android:icon="@drawable/ic_favorite_white_48px"
+            android:visible="false"
+            android:title="@string/action_donate_bitcoin"/>
+        <item
+            android:id="@+id/action_info"
+            android:icon="@drawable/ic_info_white_48px"
+            android:title="@string/action_info"/>
+
+        <item
+            android:id="@+id/action_homepage_author"
+            android:icon="@drawable/ic_language_white_48px"
+            android:title="@string/blog"/>
+
+        <item
+            android:id="@+id/action_homepage_additional"
+            android:icon="@drawable/ic_language_white_48px"
+            android:title="@string/info_additionalContact"/>
+    </group>
 </menu>

@@ -36,9 +36,9 @@
             android:background="@color/accent"
             android:gravity="center"
             android:minHeight="50dp"
-            android:text="Android App"
+            android:text="@string/android_app"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/primary_light" />
+            android:textColor="@color/primary" />
 
         <TextView
             android:id="@+id/text_android_app_author"
@@ -65,7 +65,7 @@
             android:minHeight="50dp"
             android:text="@string/info_additionalContact"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/primary_light" />
+            android:textColor="@color/primary" />
 
         <TextView
             android:id="@+id/text_additional_contact"

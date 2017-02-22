@@ -30,24 +30,15 @@ public class InfoActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        try {
-            PackageManager manager = this.getPackageManager();
-            PackageInfo info = manager.getPackageInfo(this.getPackageName(), 0);
-            textAppVersion.setText("App Version   v" + info.versionName);
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
+
+        textAppVersion.setText("App Version   v" + Shared.getAppVersionName(this));
     }
 
     @OnClick(R.id.text_app_version)
     public void onVersionClicked(View v) {
-        openWebpage(getString(R.string.page_versioning));
+        Shared.openWebpage(this, getString(R.string.page_versioning));
     }
 
-    private void openWebpage(String url) {
-        Uri uri = Uri.parse(url);
-        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(intent);
-    }
+
 
 }
