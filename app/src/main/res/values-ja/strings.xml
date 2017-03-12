@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- WebApp -->
+    <string name="info_author">created by Gregor Santner\ngsantner AT mailbox DOT org\ngsantner.github.io</string>
+
+    <!-- All other strings -->
+    <string name="action_settings">設定</string>
+    <string name="action_login">ログイン</string>
+    <string name="action_info">アプリについて</string>
+
+    <string name="no_valid_path"><![CDATA[<font size="38"><center><h1> パスが無効です </h1></center></font> <font size="25"><br> 設定を確認してください!</font>]]></string>
+    <string name="ssl_webview_error_str"><![CDATA[<font size="38"><center><h1> SSL 証明書が無効です </h1></center></font><font size="25"> <br> すべての SSL 証明書を受け入れるオプションがあります。<br><br><b> 注意:</b> 証明書のエラーを無視することはセキュリティリスクがあります!</font>]]></string>
+    <string name="ssl_toast_error">SSL 証明書が受け入れられません</string>
+
+    <string name="action_exit">ログアウトして終了</string>
+    <string name="text_webapp_username">ユーザー名:</string>
+    <string name="text_webapp_password">パスワード:</string>
+    <string name="text_check_webapp_auto_login">自動ログインを有効にする</string>
+    <string name="text_check_webapp_accept_all_ssl">すべての SSL 証明書を受け入れる</string>
+    <string name="save_str">プロファイルを保存</string>
+    <string name="save_settings_succ">プロファイルを保存しました</string>
+    <string name="text_webapp_filename">ファイル名:</string>
+    <string name="profile_selection">プロファイルの選択</string>
+    <string name="webapp_profile_1">デフォルト</string>
+    <string name="webapp_profile_2">プロファイル 2</string>
+    <string name="webapp_profile_3">プロファイル 3</string>
+    <string name="text_webapp_path">Kimai のパス:</string>
+    <string name="edit_webapp_username_hint">ユーザー名</string>
+    <string name="text_hint_webapp_password">パスワード</string>
+    <string name="action_donate_bitcoin">Bitcoin で寄付</string>
+
+</resources>
