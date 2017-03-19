@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!-- WebApp -->
-    <string name="info_author">programmé par Gregor Santner\ngsantner AT mailbox DOT org\ngsantner.github.io</string>
-
     <!-- All other strings -->
     <string name="action_settings">Réglages</string>
     <string name="action_login">Login</string>

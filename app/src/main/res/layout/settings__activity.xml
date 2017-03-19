@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="de.live.gdev.timetracker.SettingsActivity">
+    tools:context="de.live.gdev.timetracker.activity.SettingsActivity">
 
     <!-- ActionBar -->
     <android.support.design.widget.AppBarLayout

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="info_author">erstellt von Gregor Santner\ngsantner AT mailbox DOT org\ngsantner.github.io</string>
-    
     <string name="ssl_webview_error_str"> <![CDATA[<font size="38"><center><h1> SSL Zertifikat ung&uumlltig </h1></center></font><font size="25"><br> Es gibt in den Einstellungen eine Option, die es erlaubt alle Zertifikate zu akzeptieren!<br><br><b>Achtung:</b> Das Ignorieren von Zertifikats-Fehlern stellt ein Sicherheitsrisiko dar.</font>]]></string>
     <string name="ssl_toast_error">SSL Zertifikat nicht akzeptiert</string>
     <string name="no_valid_path"> <![CDATA[<font size="38"><center><h1> Ung&uumlltiger Pfad </h1></center></font> <font size="25"><br> Bitte die Login-Daten in den Einstellungen bearbeiten!</font>]]></string>
@@ -24,5 +22,9 @@
     <string name="webapp_profile_2">Profil 2</string>
     <string name="webapp_profile_3">Profil 3</string>
     <string name="action_donate_bitcoin">Bitcoin spenden</string>
+    <string name="info__contributors">Beitragende</string>
+    <string name="info__licenses">Lizenzen</string>
+    <string name="info__show_gplv3_license">GNU GPLv3 Lizenz anzeigen</string>
+    <string name="info__show_third_party_licenses">Drittanbieter Lizenzen anzeigen</string>
 
 </resources>

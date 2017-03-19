@@ -1,4 +1,4 @@
-package de.live.gdev.timetracker;
+package de.live.gdev.timetracker.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,9 +9,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import de.live.gdev.timetracker.R;
+import de.live.gdev.timetracker.util.Profile;
 
 public class SettingsActivity extends AppCompatActivity {
     static final int ACTIVITY_ID = 10;
@@ -21,28 +23,28 @@ public class SettingsActivity extends AppCompatActivity {
         public static final int CHANGED = 1;
     }
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
 
-    @Bind(R.id.radio_webapp_selector)
+    @BindView(R.id.radio_webapp_selector)
     RadioGroup profileSelector;
 
-    @Bind(R.id.edit_webapp_path)
+    @BindView(R.id.edit_webapp_path)
     EditText editPath;
 
-    @Bind(R.id.edit_webapp_filename)
+    @BindView(R.id.edit_webapp_filename)
     EditText editFilename;
 
-    @Bind(R.id.edit_webapp_username)
+    @BindView(R.id.edit_webapp_username)
     EditText editUsername;
 
-    @Bind(R.id.edit_webapp_password)
+    @BindView(R.id.edit_webapp_password)
     EditText editPassword;
 
-    @Bind(R.id.check_webapp_accept_all_ssl)
+    @BindView(R.id.check_webapp_accept_all_ssl)
     CheckBox checkAcceptAllSsl;
 
-    @Bind(R.id.check_webapp_auto_login)
+    @BindView(R.id.check_webapp_auto_login)
     CheckBox checkAutoLogin;
 
     Profile profile;
@@ -50,7 +52,7 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.settings__activity);
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);

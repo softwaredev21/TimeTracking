@@ -7,12 +7,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="${appIcon}"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
+            android:icon="${appIcon}"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -22,24 +23,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SettingsActivity"
+            android:name=".activity.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="de.live.gdev.timetracker.activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="de.live.gdev.timetracker.MainActivity" />
+                android:value="de.live.gdev.timetracker.activity.MainActivity" />
         </activity>
         <activity
-            android:name=".InfoActivity"
+            android:name=".activity.InfoActivity"
             android:label="@string/title_activity_info"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="de.live.gdev.timetracker.activity.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="de.live.gdev.timetracker.MainActivity" />
+                android:value="de.live.gdev.timetracker.activity.MainActivity" />
         </activity>
     </application>
 

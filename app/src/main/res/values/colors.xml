@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimary">@color/primary</color>
+    <color name="colorPrimaryDark">@color/primary_dark</color>
+    <color name="colorAccent">@color/accent</color>
+
+    <!-- Colors from Palette -->
     <color name="primary">#3e2622</color>
     <color name="primary_dark">#35221e</color>
     <color name="primary_light">#8BC34A</color>
@@ -8,4 +13,9 @@
     <color name="secondary_text">#727272</color>
     <color name="icons">#212121</color>
     <color name="divider">#B6B6B6</color>
+    <!-- End colors from Palette -->
+
+    <color name="default_activity_bg">#eeeeee</color>
+    <color name="black">#000</color>
+    <color name="white">#ffffff</color>
 </resources>

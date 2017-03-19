@@ -1,0 +1,27 @@
+<resources>
+
+    <!-- General -->
+    <string name="app_www_source" translatable="false">https://github.com/gsantner/kimai-android</string>
+    <string name="github" translatable="false">GitHub</string>
+    <string name="info_additionalContact" translatable="false">Kimai Homepage</string>
+    <string name="page_additional_homepage" translatable="false">http://www.kimai.org/</string>
+    <string name="page_additional_homepage_short" translatable="false">kimai.org/</string>
+    <string name="page_versioning" translatable="false">https://github.com/gsantner/kimai-android/blob/master/README.md</string>
+    <string name="page_author" translatable="false">https://gsantner.github.io/</string>
+    <string name="info__maintainer" translatable="false">Maintainer</string>
+
+
+    <string name="app_version_v" translatable="false">App Version  v%1$s</string>
+    <string name="ok" translatable="false">@android:string/ok</string>
+    <string name="info__gpl_v3_license_text" translatable="false">
+        Copyright © 2016-2017
+        \nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+        \n
+        \nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+    </string>
+
+
+    <!-- Aliases -->
+    <string name="title_activity_settings" translatable="false">@string/action_settings</string>
+    <string name="title_activity_info" translatable="false">@string/action_info</string>
+</resources>

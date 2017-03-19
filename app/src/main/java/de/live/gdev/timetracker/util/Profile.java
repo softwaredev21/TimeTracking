@@ -1,21 +1,23 @@
-package de.live.gdev.timetracker;
+package de.live.gdev.timetracker.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 
+import de.live.gdev.timetracker.R;
+
 public class Profile {
     /*
      *   Statics
      */
-    public static class PREFERENCES {
-        public static final String SELPROFILE = "selProfile";
-        public static final String AUTOLOGIN = "autologin";
-        public static final String SSLACCEPT = "sslAccept";
-        public static final String FILENAME = "filename";
-        public static final String USERNAME = "username";
-        public static final String PASSWORD = "password";
-        public static final String PATH = "path";
+    private static class PREFERENCES {
+        static final String SELPROFILE = "selProfile";
+        static final String AUTOLOGIN = "autologin";
+        static final String SSLACCEPT = "sslAccept";
+        static final String FILENAME = "filename";
+        static final String USERNAME = "username";
+        static final String PASSWORD = "password";
+        static final String PATH = "path";
     }
 
     public static Profile getDefaultProfile(Context context) {
@@ -72,7 +74,7 @@ public class Profile {
         path = preference.getString(PREFERENCES.PATH, "");
         username = preference.getString(PREFERENCES.USERNAME, "");
         password = preference.getString(PREFERENCES.PASSWORD, "");
-        autoLogin = preference.getBoolean(PREFERENCES.AUTOLOGIN, false);
+        autoLogin = preference.getBoolean(PREFERENCES.AUTOLOGIN, true);
         acceptAllSsl = preference.getBoolean(PREFERENCES.SSLACCEPT, false);
     }
 

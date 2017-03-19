@@ -1,4 +1,4 @@
-package de.live.gdev.timetracker;
+package de.live.gdev.timetracker.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -24,24 +24,28 @@ import android.widget.TextView;
 
 import org.apache.http.util.EncodingUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnLongClick;
+import de.live.gdev.timetracker.BuildConfig;
+import de.live.gdev.timetracker.R;
+import de.live.gdev.timetracker.util.Helpers;
+import de.live.gdev.timetracker.util.Profile;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static final boolean LOAD_IN_DESKTOP_MODE = true;
 
-    @Bind(R.id.web_view)
+    @BindView(R.id.web_view)
     WebView webView;
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
 
-    @Bind(R.id.drawer_layout)
+    @BindView(R.id.drawer_layout)
     DrawerLayout drawer;
 
-    @Bind(R.id.nav_view)
+    @BindView(R.id.nav_view)
     NavigationView navigationView;
 
     Profile profile;
@@ -50,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         // Setup UI
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main__activity);
         ButterKnife.bind(this);
 
         // Setup bars
@@ -59,8 +63,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         navigationView.getMenu().findItem(R.id.action_donate_bitcoin).setVisible(!BuildConfig.IS_GPLAY_BUILD);
         profile = Profile.getDefaultProfile(this);
-        ((TextView)navigationView.getHeaderView(0).findViewById(R.id.navheader_subtext))
-                .setText("v"+Shared.getAppVersionName(this));
+        ((TextView) navigationView.getHeaderView(0).findViewById(R.id.navheader_subtext))
+                .setText("v" + Helpers.getAppVersionName(this));
 
 
         webView.setWebChromeClient(new WebChromeClient());
@@ -92,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.main__menu, menu);
         return true;
     }
 
@@ -133,15 +137,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return true;
             }
             case R.id.action_donate_bitcoin: {
-                Shared.donateBitcoinRequest(this);
+                Helpers.donateBitcoinRequest(this);
                 return true;
             }
             case R.id.action_homepage_additional: {
-                Shared.openWebpage(this, getString(R.string.page_additional_homepage));
+                Helpers.openWebpageWithExternalBrowser(this, getString(R.string.page_additional_homepage));
                 return true;
             }
             case R.id.action_homepage_author: {
-                Shared.openWebpage(this, getString(R.string.page_author));
+                Helpers.openWebpageWithExternalBrowser(this, getString(R.string.page_author));
                 return true;
             }
         }
@@ -183,7 +187,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @OnLongClick(R.id.fab)
-    public boolean onFloatingActionButtonLongClicked(View v){
+    public boolean onFloatingActionButtonLongClicked(View v) {
         loadWebapp(false);
         return true;
     }

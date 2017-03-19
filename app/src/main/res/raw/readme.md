@@ -41,8 +41,10 @@ Any other data than your entered data won't be collected or stored on your devic
  <tr>
 	<td><a href="bitcoin:1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5?amount=0.003&label=gsantner_Kimai">
     <img src="https://gsantner.github.io/assets/img/personal/bitcoin/bitcoin_gdev-live-gdev_150px.png"/></a></td>
-<td>If you like my work on <b>Kimai TimeTracker</b> and Open-Source, or just want to spend me a coke, consider a small donation to my bitcoin address:
- <a href="https://gsantner.github.io/about/#donate">1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</a></td>
+	<td>If you like my work on <b>Kimai TimeTracker</b> and Open-Source, or just want to spend me a coke, consider a small donation to my bitcoin address:
+
+    <a href="https://gsantner.github.io/about/#donate">
+    1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</a></td>
  </tr>
 </table>
 
