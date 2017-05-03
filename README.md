@@ -13,11 +13,9 @@ Android app created and maintained by Gregor Santner (<https://gsantner.github.i
 
 ## Download
 
-* [F-Droid](https://f-droid.org/repository/browse/?fdid=de.live.gdev.timetracker)
+* [Official F-Droid repo](https://f-droid.org/repository/browse/?fdid=de.live.gdev.timetracker) - [(Metadata)](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/de.live.gdev.timetracker.txt)
+* [Nightly APK](https://gsantner.gitlab.io/fdroid/latest/io.github.gsantner.kimaitt.test) | [gsantner F-Droid](https://gsantner.gitlab.io/fdroid/)
 * [Google Play](https://play.google.com/store/apps/details?id=de.live.gdev.timetracker)
-* [Release archive](https://github.com/gsantner/kimai-android/releases)
-* [Your own F-Droid repo](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/de.live.gdev.timetracker.txt)
-
 
 ## English description
 App for the time managment application Kimai.

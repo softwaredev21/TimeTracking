@@ -35,5 +35,6 @@
     <string name="info__licenses">Licenses</string>
     <string name="info__show_gplv3_license">Show GNU GPLv3 license</string>
     <string name="info__show_third_party_licenses">Show 3rd party licenses</string>
+    <string name="changelog">Changelog</string>
 
 </resources>

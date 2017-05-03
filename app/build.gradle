@@ -3,17 +3,18 @@ apply plugin: 'android-apt'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
-
-    def VERSION_CODE = 14
-    def VERSION_NAME = "1.3.1"
-    def APP_NAME = "Kimai"
-    def APP_PACKAGE = "de.live.gdev.timetracker"
-    def APP_ICON = "@drawable/ic_launcher"
+    buildToolsVersion "25.0.3"
 
     defaultConfig {
         minSdkVersion 11
         targetSdkVersion 25
+
+        versionCode 15
+        versionName "1.3.2"
+
+        applicationId "de.live.gdev.timetracker"
+        resValue 'string', 'app_name', "Kimai"
+        manifestPlaceholders = [appIcon: "@drawable/ic_launcher"]
 
         buildConfigField "boolean", "IS_TEST_BUILD", "false"
         buildConfigField "boolean", "IS_GPLAY_BUILD", "false"
@@ -21,27 +22,18 @@ android {
 
     productFlavors {
         flavorDefault {
-            applicationId APP_PACKAGE
-            resValue 'string', 'app_name', APP_NAME
-            manifestPlaceholders = [appIcon: APP_ICON]
-            versionCode VERSION_CODE; versionName VERSION_NAME
-        }
-
-        flavorTest {
-            applicationId APP_PACKAGE + ".test"
-            resValue 'string', 'app_name', "Kimoi"
-            manifestPlaceholders = [appIcon: APP_ICON]// + "_test"]
-            versionCode = Integer.parseInt(new Date().format('yyMMdd'))
-            versionName = new Date().format('yyMMdd')
-            buildConfigField "boolean", "IS_TEST_BUILD", "true"
         }
 
         flavorGplay {
-            applicationId APP_PACKAGE
-            resValue 'string', 'app_name', APP_NAME
-            manifestPlaceholders = [appIcon: APP_ICON]
-            versionCode VERSION_CODE; versionName VERSION_NAME
             buildConfigField "boolean", "IS_GPLAY_BUILD", "true"
+        }
+
+        flavorTest {
+            applicationId "io.github.gsantner.kimaitt.test"
+            resValue 'string', 'app_name', "Kimai-T"
+            versionCode = Integer.parseInt(new Date().format('yyMMdd'))
+            versionName = new Date().format('yyMMdd')
+            buildConfigField "boolean", "IS_TEST_BUILD", "true"
         }
     }
 

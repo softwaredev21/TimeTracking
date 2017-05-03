@@ -24,14 +24,18 @@ import android.widget.TextView;
 
 import org.apache.http.util.EncodingUtils;
 
+import java.io.IOException;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnLongClick;
 import de.live.gdev.timetracker.BuildConfig;
 import de.live.gdev.timetracker.R;
+import de.live.gdev.timetracker.util.AppSettings;
 import de.live.gdev.timetracker.util.Helpers;
 import de.live.gdev.timetracker.util.Profile;
+import de.live.gdev.timetracker.util.SimpleMarkdownParser;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static final boolean LOAD_IN_DESKTOP_MODE = true;
@@ -92,6 +96,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+
+        // Show first start dialog / changelog
+        AppSettings appSettings = new AppSettings(this);
+        try {
+            if (appSettings.isAppFirstStart()) {
+                Helpers.showDialogWithHtmlTextView(this, new SimpleMarkdownParser().parse(
+                        getResources().openRawResource(R.raw.licenses_3rd_party),
+                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml(),
+                        R.string.changelog);
+            } else if (appSettings.isAppCurrentVersionFirstStart()) {
+                Helpers.showDialogWithHtmlTextView(this, new SimpleMarkdownParser().parse(
+                        getResources().openRawResource(R.raw.changelog),
+                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml(),
+                        R.string.changelog);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

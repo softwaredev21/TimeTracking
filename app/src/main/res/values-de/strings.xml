@@ -26,5 +26,6 @@
     <string name="info__licenses">Lizenzen</string>
     <string name="info__show_gplv3_license">GNU GPLv3 Lizenz anzeigen</string>
     <string name="info__show_third_party_licenses">Drittanbieter Lizenzen anzeigen</string>
+    <string name="changelog">Änderungen</string>
 
 </resources>

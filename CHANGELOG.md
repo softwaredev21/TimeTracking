@@ -1,3 +1,10 @@
+### v1.3.2
+- Introduce minimalistic Markdown Parser
+- Show CHANGELOG after update
+- Convert existing Markup files to Markdown
+- Update existing markdown files
+- Update InfoActivity to use new Parser
+
 ### v1.3.1
 * Move from Travis to CircleCI
 * Updated about section

@@ -52,13 +52,13 @@ public class InfoActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        textMaintainers.setText(new SpannableString(Html.fromHtml(getMaintainersHtml(this))));
+        textMaintainers.setText(new SpannableString(Html.fromHtml(
+                Helpers.loadRawMarkdownForTextView(this, R.raw.maintainers, ""))));
         textMaintainers.setMovementMethod(LinkMovementMethod.getInstance());
 
         textContributors.setText(new SpannableString(Html.fromHtml(
-                Helpers.readTextfileFromRawRes(this, R.raw.contributors,
-                        "<font color='" + ContextCompat.getColor(this, R.color.accent) + "'><b>*</b></font> ", "<br>")))
-        );
+                Helpers.loadRawMarkdownForTextView(this, R.raw.contributors, "* ")
+        )));
         textContributors.setMovementMethod(LinkMovementMethod.getInstance());
 
 
@@ -86,20 +86,13 @@ public class InfoActivity extends AppCompatActivity {
                 break;
             }
             case R.id.info__activity__button_gplv3_license: {
-                Helpers.showDialogWithRawFileInWebView(context, "license.md", R.string.info__licenses);
+                Helpers.showDialogWithHtmlTextView(this, Helpers.loadRawMarkdownForTextView(this, R.raw.license, ""), R.string.info__licenses);
                 break;
             }
             case R.id.info__activity__button_third_party_licenses: {
-                Helpers.showDialogWithRawFileInWebView(context, "licenses.html", R.string.info__licenses);
+                Helpers.showDialogWithHtmlTextView(this, Helpers.loadRawMarkdownForTextView(this, R.raw.licenses_3rd_party, ""), R.string.info__licenses);
                 break;
             }
         }
-    }
-
-    public String getMaintainersHtml(Context context) {
-        String text = Helpers.readTextfileFromRawRes(context, R.raw.maintainers, "", "<br>");
-        text = text.replace("SUBTABBY", "&nbsp;&nbsp;")
-                .replace("NEWENTRY", "<font color='" + ContextCompat.getColor(this, R.color.accent) + "'><b>*</b></font> ");
-        return text;
     }
 }
