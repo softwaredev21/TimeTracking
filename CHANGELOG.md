@@ -1,3 +1,8 @@
+### v1.3.3
+- Change license to MIT
+- Use opoc/Helpers
+- Convert InfoActivity to opoc
+
 ### v1.3.2
 - Introduce minimalistic Markdown Parser
 - Show CHANGELOG after update

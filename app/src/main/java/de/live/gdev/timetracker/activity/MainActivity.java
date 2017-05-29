@@ -1,5 +1,6 @@
 package de.live.gdev.timetracker.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.net.http.SslError;
@@ -33,9 +34,10 @@ import butterknife.OnLongClick;
 import de.live.gdev.timetracker.BuildConfig;
 import de.live.gdev.timetracker.R;
 import de.live.gdev.timetracker.util.AppSettings;
-import de.live.gdev.timetracker.util.Helpers;
 import de.live.gdev.timetracker.util.Profile;
-import de.live.gdev.timetracker.util.SimpleMarkdownParser;
+import io.github.gsantner.opoc.util.Helpers;
+import io.github.gsantner.opoc.util.HelpersA;
+import io.github.gsantner.opoc.util.SimpleMarkdownParser;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static final boolean LOAD_IN_DESKTOP_MODE = true;
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Profile profile;
 
     @Override
+    @SuppressLint("SetTextI18n")
     protected void onCreate(Bundle savedInstanceState) {
         // Setup UI
         super.onCreate(savedInstanceState);
@@ -68,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.getMenu().findItem(R.id.action_donate_bitcoin).setVisible(!BuildConfig.IS_GPLAY_BUILD);
         profile = Profile.getDefaultProfile(this);
         ((TextView) navigationView.getHeaderView(0).findViewById(R.id.navheader_subtext))
-                .setText("v" + Helpers.getAppVersionName(this));
+                .setText("v" + Helpers.get().get().getAppVersionName());
 
 
         webView.setWebChromeClient(new WebChromeClient());
@@ -101,15 +104,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         AppSettings appSettings = new AppSettings(this);
         try {
             if (appSettings.isAppFirstStart()) {
-                Helpers.showDialogWithHtmlTextView(this, new SimpleMarkdownParser().parse(
+                HelpersA.get(this).showDialogWithHtmlTextView(R.string.changelog, new SimpleMarkdownParser().parse(
                         getResources().openRawResource(R.raw.licenses_3rd_party),
-                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml(),
-                        R.string.changelog);
+                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml()
+                );
             } else if (appSettings.isAppCurrentVersionFirstStart()) {
-                Helpers.showDialogWithHtmlTextView(this, new SimpleMarkdownParser().parse(
-                        getResources().openRawResource(R.raw.changelog),
-                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml(),
-                        R.string.changelog);
+                HelpersA.get(this).showDialogWithHtmlTextView(R.string.changelog,
+                        new SimpleMarkdownParser().parse(
+                                getResources().openRawResource(R.raw.changelog),
+                                SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml());
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -159,15 +162,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return true;
             }
             case R.id.action_donate_bitcoin: {
-                Helpers.donateBitcoinRequest(this);
+                Helpers.get().get().showDonateBitcoinRequest();
                 return true;
             }
             case R.id.action_homepage_additional: {
-                Helpers.openWebpageWithExternalBrowser(this, getString(R.string.page_additional_homepage));
+                Helpers.get().get().openWebpageInExternalBrowser(getString(R.string.page_additional_homepage));
                 return true;
             }
             case R.id.action_homepage_author: {
-                Helpers.openWebpageWithExternalBrowser(this, getString(R.string.page_author));
+                Helpers.get().get().openWebpageInExternalBrowser(getString(R.string.page_author));
                 return true;
             }
         }

@@ -8,16 +8,26 @@
     <string name="page_additional_homepage_short" translatable="false">kimai.org/</string>
     <string name="page_versioning" translatable="false">https://github.com/gsantner/kimai-android/blob/master/README.md</string>
     <string name="page_author" translatable="false">https://gsantner.github.io/</string>
-    <string name="info__maintainer" translatable="false">Maintainer</string>
+
+    <string name="donate__bitcoin_id" translatable="false">1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</string>
+    <string name="donate__bitcoin_amount" translatable="false">0.01</string>
+    <string name="donate__bitcoin_message" translatable="false">Have some coke, and a nice day</string>
+    <string name="donate__bitcoin_url" translatable="false">https://gsantner.github.io/donate/#donate</string>
 
 
     <string name="app_version_v" translatable="false">App Version  v%1$s</string>
     <string name="ok" translatable="false">@android:string/ok</string>
     <string name="info__gpl_v3_license_text" translatable="false">
-        Copyright © 2016-2017
+        Copyright © 2014-2017
         \nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
         \n
         \nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+    </string>
+    <string name="info__mit_license_text" translatable="false">
+        Copyright © 2014-2017
+        \nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+        \n
+        \nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
     </string>
 
 

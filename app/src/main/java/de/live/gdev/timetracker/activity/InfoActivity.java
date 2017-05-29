@@ -1,3 +1,22 @@
+/*
+ * ---------------------------------------------------------------------------- *
+ * Gregor Santner <gsantner.github.io> wrote this file. You can do whatever
+ * you want with this stuff. If we meet some day, and you think this stuff is
+ * worth it, you can buy me a coke in return. Provided as is without any kind
+ * of warranty. No attribution required.                  - Gregor Santner
+ *
+ * License: Creative Commons Zero (CC0 1.0)
+ *  http://creativecommons.org/publicdomain/zero/1.0/
+ * ----------------------------------------------------------------------------
+ */
+
+ /*
+ * Get updates:
+ *  https://github.com/gsantner/onePieceOfCode/blob/master/java/infoActivity/InfoActivity.java
+ * A simple activity to show information about the app.
+ * Intended to use together: SimpleMarkdownParser, Helpers, SettingsActivity and it's xml-layout.
+ */
+
 package de.live.gdev.timetracker.activity;
 
 import android.annotation.SuppressLint;
@@ -5,7 +24,6 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
@@ -18,7 +36,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.live.gdev.timetracker.R;
-import de.live.gdev.timetracker.util.Helpers;
+import io.github.gsantner.opoc.util.Helpers;
+import io.github.gsantner.opoc.util.HelpersA;
 
 public class InfoActivity extends AppCompatActivity {
     //####################
@@ -53,11 +72,11 @@ public class InfoActivity extends AppCompatActivity {
         }
 
         textMaintainers.setText(new SpannableString(Html.fromHtml(
-                Helpers.loadRawMarkdownForTextView(this, R.raw.maintainers, ""))));
+                Helpers.get().loadMarkdownForTextViewFromRaw(R.raw.maintainers, ""))));
         textMaintainers.setMovementMethod(LinkMovementMethod.getInstance());
 
         textContributors.setText(new SpannableString(Html.fromHtml(
-                Helpers.loadRawMarkdownForTextView(this, R.raw.contributors, "* ")
+                Helpers.get().loadMarkdownForTextViewFromRaw(R.raw.contributors, "* ")
         )));
         textContributors.setMovementMethod(LinkMovementMethod.getInstance());
 
@@ -72,25 +91,20 @@ public class InfoActivity extends AppCompatActivity {
         }
     }
 
-    @OnClick(R.id.info__activity__text_app_version)
-    public void onVersionClicked(View v) {
-        Helpers.openWebpageWithExternalBrowser(this, getString(R.string.app_www_source));
-    }
-
-    @OnClick({R.id.info__activity__text_app_version, R.id.info__activity__button_third_party_licenses, R.id.info__activity__button_gplv3_license})
+    @OnClick({R.id.info__activity__text_app_version, R.id.info__activity__button_third_party_licenses, R.id.info__activity__button_app_license})
     public void onButtonClicked(View v) {
         Context context = v.getContext();
         switch (v.getId()) {
             case R.id.info__activity__text_app_version: {
-                Helpers.openWebpageWithExternalBrowser(context, getString(R.string.app_www_source));
+                Helpers.get().openWebpageInExternalBrowser(getString(R.string.app_www_source));
                 break;
             }
-            case R.id.info__activity__button_gplv3_license: {
-                Helpers.showDialogWithHtmlTextView(this, Helpers.loadRawMarkdownForTextView(this, R.raw.license, ""), R.string.info__licenses);
+            case R.id.info__activity__button_app_license: {
+                HelpersA.get(this).showDialogWithHtmlTextView(R.string.info__licenses, Helpers.get().loadMarkdownForTextViewFromRaw(R.raw.license, ""));
                 break;
             }
             case R.id.info__activity__button_third_party_licenses: {
-                Helpers.showDialogWithHtmlTextView(this, Helpers.loadRawMarkdownForTextView(this, R.raw.licenses_3rd_party, ""), R.string.info__licenses);
+                HelpersA.get(this).showDialogWithHtmlTextView(R.string.info__licenses, Helpers.get().loadMarkdownForTextViewFromRaw(R.raw.licenses_3rd_party, ""));
                 break;
             }
         }
