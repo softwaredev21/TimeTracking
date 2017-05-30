@@ -1,7 +1,9 @@
 ### v1.3.3
 - Change license to MIT
 - Use opoc/Helpers
+- Use opoc/AppSettingsBase
 - Convert InfoActivity to opoc
+- Use PreferenceFragment for SettingsActivity
 
 ### v1.3.2
 - Introduce minimalistic Markdown Parser

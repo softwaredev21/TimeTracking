@@ -5,13 +5,13 @@ import android.content.Intent;
 import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,7 +34,6 @@ import butterknife.OnLongClick;
 import de.live.gdev.timetracker.BuildConfig;
 import de.live.gdev.timetracker.R;
 import de.live.gdev.timetracker.util.AppSettings;
-import de.live.gdev.timetracker.util.Profile;
 import io.github.gsantner.opoc.util.Helpers;
 import io.github.gsantner.opoc.util.HelpersA;
 import io.github.gsantner.opoc.util.SimpleMarkdownParser;
@@ -54,43 +53,42 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @BindView(R.id.nav_view)
     NavigationView navigationView;
 
-    Profile profile;
+    @BindView(R.id.fab)
+    FloatingActionButton fab;
+
+    AppSettings appSettings;
 
     @Override
-    @SuppressLint("SetTextI18n")
+    @SuppressLint({"SetTextI18n", "SetJavaScriptEnabled"})
     protected void onCreate(Bundle savedInstanceState) {
         // Setup UI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main__activity);
         ButterKnife.bind(this);
+        appSettings = AppSettings.get();
 
         // Setup bars
         setSupportActionBar(toolbar);
         navigationView.setNavigationItemSelectedListener(this);
-
         navigationView.getMenu().findItem(R.id.action_donate_bitcoin).setVisible(!BuildConfig.IS_GPLAY_BUILD);
-        profile = Profile.getDefaultProfile(this);
         ((TextView) navigationView.getHeaderView(0).findViewById(R.id.navheader_subtext))
-                .setText("v" + Helpers.get().get().getAppVersionName());
+                .setText("v" + Helpers.get().getAppVersionName());
+        fab.setVisibility(appSettings.isShowMainFab() ? View.VISIBLE : View.GONE);
+        appSettings.setReloadRequired(false);
 
-
+        // Set web settings
         webView.setWebChromeClient(new WebChromeClient());
-        WebSettings settings = webView.getSettings();
-        settings.setJavaScriptEnabled(true);
-        settings.setDatabaseEnabled(true);
-        settings.setDomStorageEnabled(true);
-        settings.setBuiltInZoomControls(true);
-
-        if (LOAD_IN_DESKTOP_MODE) {
-            settings.setSupportZoom(true);
-            settings.setLoadWithOverviewMode(true);
-            settings.setUseWideViewPort(true);
-        }
-
-        // Apply web settings
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setDatabaseEnabled(true);
+        webSettings.setDomStorageEnabled(true);
+        webSettings.setBuiltInZoomControls(true);
+        webSettings.setSupportZoom(appSettings.isProfileLoadInDesktopMode());
+        webSettings.setLoadWithOverviewMode(appSettings.isProfileLoadInDesktopMode());
+        webSettings.setUseWideViewPort(appSettings.isProfileLoadInDesktopMode());
         webView.setWebViewClient(new WebViewClient() {
             public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
-                if (profile.isAcceptAllSsl()) {
+                if (appSettings.isProfileAcceptAllSsl()) {
                     handler.proceed();
                 } else {
                     Snackbar.make(findViewById(android.R.id.content), R.string.ssl_toast_error, Snackbar.LENGTH_SHORT).show();
@@ -99,9 +97,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-
         // Show first start dialog / changelog
-        AppSettings appSettings = new AppSettings(this);
         try {
             if (appSettings.isAppFirstStart()) {
                 HelpersA.get(this).showDialogWithHtmlTextView(R.string.changelog, new SimpleMarkdownParser().parse(
@@ -141,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean handleBarClick(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings: {
-                startActivityForResult(new Intent(this, SettingsActivity.class), SettingsActivity.ACTIVITY_ID);
+                HelpersA.get(this).animateToActivity(SettingsActivity.class, false, null);
                 return true;
             }
             case R.id.action_login: {
@@ -161,29 +157,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 finish();
                 return true;
             }
+            case R.id.action_reload: {
+                webView.reload();
+                return true;
+            }
             case R.id.action_donate_bitcoin: {
-                Helpers.get().get().showDonateBitcoinRequest();
+                Helpers.get().showDonateBitcoinRequest();
                 return true;
             }
             case R.id.action_homepage_additional: {
-                Helpers.get().get().openWebpageInExternalBrowser(getString(R.string.page_additional_homepage));
+                Helpers.get().openWebpageInExternalBrowser(getString(R.string.page_additional_homepage));
                 return true;
             }
             case R.id.action_homepage_author: {
-                Helpers.get().get().openWebpageInExternalBrowser(getString(R.string.page_author));
+                Helpers.get().openWebpageInExternalBrowser(getString(R.string.page_author));
                 return true;
             }
         }
         return false;
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == SettingsActivity.ACTIVITY_ID &&
-                resultCode == SettingsActivity.RESULT.CHANGED) {
-            profile = Profile.getDefaultProfile(this);
-        }
     }
 
     @Override
@@ -202,8 +193,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onResume() {
         super.onResume();
-        profile.reloadSettings();
-        loadWebapp(profile.isAutoLogin());
+        if (appSettings.isReloadRequired()) {
+            recreate();
+            return;
+
+        }
+        loadWebapp(appSettings.isProfileAutoLogin());
     }
 
     @OnClick(R.id.fab)
@@ -220,20 +215,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void loadWebapp(boolean doLogin) {
         Uri url;
         try {
-            url = Uri.parse(profile.getFullPath());
+            url = Uri.parse(appSettings.getProfilePathFull());
         } catch (Exception e) {
             webView.loadData(getString(R.string.no_valid_path), "text/html", "UTF-16");
             return;
         }
 
         String url_s = url.toString();
-        if (TextUtils.isEmpty(url_s) || url_s.equals("index.php")) {
+        if (appSettings.isProfileEmpty()) {
             webView.loadData(getString(R.string.no_valid_path), "text/html", "UTF-16");
         } else {
             webView.loadUrl(url_s);
             if (doLogin) {
                 url_s += "?a=checklogin";
-                String postData = "name=" + profile.getUsername() + "&password=" + profile.getPassword();
+                String postData = "name=" + appSettings.getProfileLoginUsername() + "&password=" + appSettings.getProfileLoginPassword();
                 this.webView.postUrl(url_s, EncodingUtils.getBytes(postData, "base64"));
             }
         }
