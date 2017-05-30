@@ -2,8 +2,8 @@
 =======
 
 ## General
-License: **MIT**
-Android app created and maintained by Gregor Santner (<https://gsantner.github.io>), 2014-
+License: **MIT**  
+Android app created and maintained by Gregor Santner (<https://gsantner.github.io>), 2014-  
 
 [![CircleCI](https://circleci.com/gh/gsantner/kimai-android.svg?style=shield)](https://circleci.com/gh/gsantner/kimai-android)
 <span class="badge-bitcoin"><a href="https://gsantner.github.io/donate/#donate" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span>
@@ -37,10 +37,10 @@ Any other data than your entered data won't be collected or stored on your devic
 ## Donations
 <table>
  <tr>
-	<td><a href="bitcoin:1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5?amount=0.003&label=gsantner_Kimai">
+	<td><a href="bitcoin:1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5?amount=0.001&label=Thanks">
     <img src="https://gsantner.github.io/assets/img/personal/bitcoin/bitcoin_gsantner.png"/></a></td>
 <td>If you like my work on <b>Kimai TimeTracker</b> and Open-Source, or just want to spend me a coke, consider a small donation to my bitcoin address:
- <a href="https://gsantner.github.io/about/#donate">1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</a></td>
+ <a href="https://gsantner.github.io/#donate">1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</a></td>
  </tr>
 </table>
 
@@ -50,10 +50,10 @@ Any other data than your entered data won't be collected or stored on your devic
 
 <table>
   <tr>
-    <td> <img  src="https://cloud.githubusercontent.com/assets/6735650/23229191/a10bbcfc-f93f-11e6-9273-b42f4922d0be.png"/> </td>
-    <td> <img src="https://cloud.githubusercontent.com/assets/6735650/23229192/a12f92bc-f93f-11e6-8a07-d453376f2a20.png"/> </td>
+    <td> <img  src="https://cloud.githubusercontent.com/assets/6735650/26566133/0fca845a-44f1-11e7-8060-702d774f1a1e.png"/> </td>
+    <td> <img src="https://cloud.githubusercontent.com/assets/6735650/26566134/0fce2010-44f1-11e7-8f08-4991b7d1dfd3.png"/> </td>
   </tr><tr>
-    <td> <img src="https://cloud.githubusercontent.com/assets/6735650/23229193/a13341aa-f93f-11e6-914d-79ce4ce89574.png"/> </td>
+    <td> <img src="https://cloud.githubusercontent.com/assets/6735650/26566135/0fe766a6-44f1-11e7-9728-8f49ccec1f83.png"/> </td>
     <td> <img src="https://cloud.githubusercontent.com/assets/6735650/23229880/33c69f4c-f942-11e6-84d7-4b2b700e26b1.png" /> </td>
   </tr>
 </table>
