@@ -30,6 +30,10 @@ Normally you have to open your browser, go to favourites, click your kimai page,
 This app was developed under non commercial purposes.
 Actually there are no, and there will never be advertisments.
 
+## License
+The code of the app is licensed MIT. The translations are licensed CC0 1.0.  
+For more licensing informations, see [`3rd party licenses`](/app/src/main/res/raw/licenses_3rd_party.md).  
+
 ## Privacy
 This app doesn't open connections to anywhere else than your entered kimai url.
 Any other data than your entered data won't be collected or stored on your device.

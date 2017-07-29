@@ -1,2 +1,2 @@
-* Gregor Santner (gsantner)
-~° https://gsantner.github.io
+* Gregor Santner
+~° <https://gsantner.github.io>
