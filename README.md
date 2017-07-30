@@ -8,7 +8,18 @@ Android app created and maintained by Gregor Santner (<https://gsantner.github.i
 [![CircleCI](https://circleci.com/gh/gsantner/kimai-android.svg?style=shield)](https://circleci.com/gh/gsantner/kimai-android)
 <span class="badge-bitcoin"><a href="https://gsantner.github.io/donate/#donate" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span>
 
-[![F-Droid](https://f-droid.org/wiki/images/0/06/F-Droid-button_get-it-on.png)](https://f-droid.org/repository/browse/?fdfilter=kimai&fdid=de.live.gdev.timetracker)
+<p align="left">
+<a href="https://f-droid.org/repository/browse/?fdid=de.live.gdev.timetracker">
+    <img alt="Get it on F-Droid"
+        height="80"
+        src="https://f-droid.org/badge/get-it-on.png" />
+        </a>
+<a href="https://play.google.com/store/apps/details?id=de.live.gdev.timetracker">
+    <img alt="Get it on Google Play"
+        height="80"
+        src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" />
+	</a>  
+</p>
 
 
 ## Download
