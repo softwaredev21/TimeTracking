@@ -1,3 +1,6 @@
+### v1.3.5
+- Update to android-api26
+
 ### v1.3.4
 - Update opoc
 - Update license info
