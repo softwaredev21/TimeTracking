@@ -1,3 +1,9 @@
+### v1.3.6
+- App metadata (fastlane-ish)
+- Demo account template in profile 3
+- Get demo account here: <https://demo.kimai.org/status.php>
+- Username, password needs to be updated
+
 ### v1.3.5
 - Update to android-api26
 

@@ -140,4 +140,17 @@ public class AppSettings extends AppSettingsBase {
     public String getProfileHttpAuthPassword() {
         return getString(prefCurrentProfile, R.string.pref_key__profile_httpauth_password, "");
     }
+
+    public void setProfileLoginUsername(String value) {
+        setString(prefCurrentProfile, R.string.pref_key__profile_login_username, value);
+    }
+
+    public void getProfileLoginPassword(String value) {
+        setString(prefCurrentProfile, R.string.pref_key__profile_login_password, value);
+    }
+
+    public void selectProfile(int index) {
+        setInt(R.string.pref_key__app_selected_profile, index);
+        loadSelectedProfile();
+    }
 }
