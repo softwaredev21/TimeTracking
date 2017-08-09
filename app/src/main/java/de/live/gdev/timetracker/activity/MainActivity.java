@@ -34,8 +34,8 @@ import butterknife.OnLongClick;
 import de.live.gdev.timetracker.BuildConfig;
 import de.live.gdev.timetracker.R;
 import de.live.gdev.timetracker.util.AppSettings;
-import io.github.gsantner.opoc.util.Helpers;
-import io.github.gsantner.opoc.util.HelpersA;
+import de.live.gdev.timetracker.util.Helpers;
+import de.live.gdev.timetracker.util.HelpersA;
 import io.github.gsantner.opoc.util.SimpleMarkdownParser;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return true;
             }
             case R.id.action_donate_bitcoin: {
-                Helpers.get().showDonateBitcoinRequest();
+                Helpers.get().showDonateBitcoinRequest(R.string.donate__bitcoin_id, R.string.donate__bitcoin_amount, R.string.donate__bitcoin_amount, R.string.donate__bitcoin_url);
                 return true;
             }
             case R.id.action_homepage_additional: {

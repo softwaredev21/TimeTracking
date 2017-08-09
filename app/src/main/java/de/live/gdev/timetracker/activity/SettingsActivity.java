@@ -23,7 +23,6 @@ public class SettingsActivity extends AppCompatActivity {
     @BindView(R.id.settings_toolbar)
     protected Toolbar toolbar;
 
-
     public void onCreate(Bundle b) {
         super.onCreate(b);
         setContentView(R.layout.settings__activity);

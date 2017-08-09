@@ -1,3 +1,6 @@
+### v1.3.7
+- Update opoc
+
 ### v1.3.6
 - App metadata (fastlane-ish)
 - Demo account template in profile 3

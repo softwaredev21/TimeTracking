@@ -29,30 +29,30 @@ public class AppSettings extends AppSettingsBase {
     //############################################
 
     public boolean isAppFirstStart(boolean doSet) {
-        boolean value = getBool(prefApp, R.string.pref_key__app_first_start, true);
+        boolean value = getBool(_prefApp, R.string.pref_key__app_first_start, true);
         if (doSet) {
-            setBool(prefApp, R.string.pref_key__app_first_start, false);
+            setBool(_prefApp, R.string.pref_key__app_first_start, false);
         }
         return value;
     }
 
     @SuppressWarnings("ConstantConditions")
     public boolean isAppCurrentVersionFirstStart() {
-        int value = getInt(prefApp, R.string.pref_key__app_first_start_current_version, -1);
-        setInt(prefApp, R.string.pref_key__app_first_start_current_version, BuildConfig.VERSION_CODE);
+        int value = getInt(_prefApp, R.string.pref_key__app_first_start_current_version, -1);
+        setInt(_prefApp, R.string.pref_key__app_first_start_current_version, BuildConfig.VERSION_CODE);
         return value != BuildConfig.VERSION_CODE && !BuildConfig.IS_TEST_BUILD;
     }
 
     public boolean isShowMainFab() {
-        return getBool(prefApp, R.string.pref_key__show_main_fab, true);
+        return getBool(_prefApp, R.string.pref_key__show_main_fab, true);
     }
 
     public boolean isReloadRequired() {
-        return getBool(prefApp, R.string.pref_key__app_reload_required, false);
+        return getBool(_prefApp, R.string.pref_key__app_reload_required, false);
     }
 
     public void setReloadRequired(boolean value) {
-        setBool(prefApp, R.string.pref_key__app_reload_required, value);
+        setBool(_prefApp, R.string.pref_key__app_reload_required, value);
     }
 
     public SharedPreferences getSharedPreferenceCurrentProfile() {
@@ -64,12 +64,12 @@ public class AppSettings extends AppSettingsBase {
     //# Profile
     //#############
     public void loadSelectedProfile() {
-        prefCurrentProfile = context.getSharedPreferences("Profile" + getSelectedProfileNr(), Context.MODE_PRIVATE);
+        prefCurrentProfile = _context.getSharedPreferences("Profile" + getSelectedProfileNr(), Context.MODE_PRIVATE);
     }
 
     public void loadProfile(int nr) {
         nr = nr >= 0 && nr < 3 ? nr : 0;
-        prefCurrentProfile = context.getSharedPreferences("Profile" + nr, Context.MODE_PRIVATE);
+        prefCurrentProfile = _context.getSharedPreferences("Profile" + nr, Context.MODE_PRIVATE);
     }
 
     public int getSelectedProfileNr() {

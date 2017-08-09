@@ -36,8 +36,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.live.gdev.timetracker.R;
-import io.github.gsantner.opoc.util.Helpers;
-import io.github.gsantner.opoc.util.HelpersA;
+import de.live.gdev.timetracker.util.Helpers;
+import de.live.gdev.timetracker.util.HelpersA;
 import io.github.gsantner.opoc.util.SimpleMarkdownParser;
 
 @SuppressWarnings("unused")
@@ -119,7 +119,7 @@ public class AboutActivity extends AppCompatActivity {
         Context context = v.getContext();
         switch (v.getId()) {
             case R.id.about__activity__text_app_version: {
-                HelpersA.get(this).openWebpageInExternalBrowser(getString(R.string.app_www_source));
+                Helpers.get().openWebpageInExternalBrowser(getString(R.string.app_www_source));
                 break;
             }
             case R.id.about__activity__button_app_license: {
