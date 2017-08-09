@@ -1,8 +1,9 @@
-package de.live.gdev.timetracker;
+package io.github.gsantner.webappwithlogin;
 
 import android.app.Application;
 
-import de.live.gdev.timetracker.util.AppSettings;
+import io.github.gsantner.webappwithlogin.util.AppSettings;
+import wawl.WawlOverrides;
 
 public class App extends Application {
     private volatile static App app;
@@ -18,10 +19,7 @@ public class App extends Application {
 
         AppSettings appSettings = AppSettings.get();
         if (appSettings.isAppFirstStart(false)) {
-            appSettings.loadProfile(2);
-            appSettings.setProfileLoginUsername("user_");
-            appSettings.setProfilePathDomainAndDirectory("https://demo.kimai.org");
-            appSettings.loadProfile(0);
+            WawlOverrides.onAppFirstStart(this, appSettings);
         }
     }
 }

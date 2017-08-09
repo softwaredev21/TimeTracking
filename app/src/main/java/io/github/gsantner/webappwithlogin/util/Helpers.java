@@ -9,17 +9,19 @@
  *  http://creativecommons.org/publicdomain/zero/1.0/
  * ----------------------------------------------------------------------------
  */
-package de.live.gdev.timetracker.util;
+package io.github.gsantner.webappwithlogin.util;
 
-import android.app.Activity;
+import android.content.Context;
+
+import io.github.gsantner.webappwithlogin.App;
 
 @SuppressWarnings({"WeakerAccess", "unused", "SameParameterValue", "SpellCheckingInspection"})
-public class HelpersA extends io.github.gsantner.opoc.util.HelpersA {
-    public HelpersA(Activity activity) {
-        super(activity);
+public class Helpers extends io.github.gsantner.opoc.util.Helpers {
+    public Helpers(Context context) {
+        super(context);
     }
 
-    public static HelpersA get(Activity activity) {
-        return new HelpersA(activity);
+    public static Helpers get() {
+        return new Helpers(App.get());
     }
 }

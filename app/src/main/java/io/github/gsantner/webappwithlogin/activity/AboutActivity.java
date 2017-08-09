@@ -17,7 +17,7 @@
  * Intended to use together: SimpleMarkdownParser, Helpers, AboutActivity and it's xml-layout.
  */
 
-package de.live.gdev.timetracker.activity;
+package io.github.gsantner.webappwithlogin.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -36,8 +36,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.live.gdev.timetracker.R;
-import de.live.gdev.timetracker.util.Helpers;
-import de.live.gdev.timetracker.util.HelpersA;
+import io.github.gsantner.webappwithlogin.util.Helpers;
+import io.github.gsantner.webappwithlogin.util.HelpersA;
 import io.github.gsantner.opoc.util.SimpleMarkdownParser;
 
 @SuppressWarnings("unused")

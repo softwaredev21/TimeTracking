@@ -1,4 +1,4 @@
-package de.live.gdev.timetracker.activity;
+package io.github.gsantner.webappwithlogin.activity;
 
 import android.annotation.SuppressLint;
 import android.app.FragmentTransaction;
@@ -15,7 +15,7 @@ import android.view.View;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.live.gdev.timetracker.R;
-import de.live.gdev.timetracker.util.AppSettings;
+import io.github.gsantner.webappwithlogin.util.AppSettings;
 
 public class SettingsActivity extends AppCompatActivity {
     @BindView(R.id.settings_appbar)

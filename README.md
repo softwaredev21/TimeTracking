@@ -1,4 +1,4 @@
-![App Logo](https://raw.githubusercontent.com/gsantner/kimai-android/master/app/src/main/res/drawable-hdpi/ic_launcher.png "App Logo") Kimai TimeTracker
+![App Logo](https://raw.githubusercontent.com/gsantner/kimai-android/master/wawl/res/drawable-hdpi/ic_launcher.png "App Logo") Kimai TimeTracker
 =======
 
 ## General
@@ -25,7 +25,6 @@ Android app created and maintained by Gregor Santner (<https://gsantner.github.i
 ## Download
 
 * [Official F-Droid repo](https://f-droid.org/repository/browse/?fdid=de.live.gdev.timetracker) - [(Metadata)](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/de.live.gdev.timetracker.txt)
-* [Nightly APK](https://gsantner.gitlab.io/fdroid/latest/io.github.gsantner.kimaitt.test) | [gsantner F-Droid](https://gsantner.gitlab.io/fdroid/)
 * [Google Play](https://play.google.com/store/apps/details?id=de.live.gdev.timetracker)
 
 ## English description

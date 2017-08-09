@@ -1,13 +1,13 @@
-package de.live.gdev.timetracker.util;
+package io.github.gsantner.webappwithlogin.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 
-import de.live.gdev.timetracker.App;
 import de.live.gdev.timetracker.BuildConfig;
 import de.live.gdev.timetracker.R;
 import io.github.gsantner.opoc.util.AppSettingsBase;
+import io.github.gsantner.webappwithlogin.App;
 
 public class AppSettings extends AppSettingsBase {
     private SharedPreferences prefCurrentProfile;
@@ -77,7 +77,7 @@ public class AppSettings extends AppSettingsBase {
     }
 
     public boolean isProfileEmpty() {
-        return getProfilePathDomainAndDirectory().equals(rstr(R.string.default_path_domain_and_folder))
+        return TextUtils.isEmpty(getProfilePathDomainAndDirectory())
                 || TextUtils.isEmpty(getProfileLoginPassword());
     }
 
@@ -87,7 +87,7 @@ public class AppSettings extends AppSettingsBase {
     }
 
     public String getProfilePathDomainAndDirectory() {
-        String ret = getString(prefCurrentProfile, R.string.pref_key__profile_path_domain_and_directory, rstr(R.string.default_path_domain_and_folder));
+        String ret = getString(prefCurrentProfile, R.string.pref_key__profile_path_domain_and_directory, "");
         if (!TextUtils.isEmpty(ret) && ret.endsWith("/")) {
             ret = ret.substring(0, ret.length() - 1);
             setProfilePathDomainAndDirectory(ret);
@@ -106,7 +106,7 @@ public class AppSettings extends AppSettingsBase {
     }
 
     public String getProfilePathFilename() {
-        return getString(prefCurrentProfile, R.string.pref_key__profile_path_filename, "index.php");
+        return getString(prefCurrentProfile, R.string.pref_key__profile_path_filename, rstr(R.string.default_path_filename));
     }
 
     public String getProfileLoginUsername() {

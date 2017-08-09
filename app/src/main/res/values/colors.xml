@@ -3,13 +3,5 @@
     <color name="colorAccent">@color/accent</color>
     <color name="colorPrimaryDark">@color/primary_dark</color>
 
-    <!-- Colors from Palette -->
-    <color name="primary">#3e2622</color>
-    <color name="primary_dark">#35221e</color>
-    <color name="primary_light">#8BC34A</color>
-    <color name="accent">#689F38</color>
-    <color name="secondary_text">#727272</color>
-    <!-- End colors from Palette -->
-
     <color name="white">#ffffff</color>
 </resources>

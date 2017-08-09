@@ -1,4 +1,5 @@
 ### v1.3.7
+- Simplify shared code between Kimai TT and Cherry
 - Update opoc
 
 ### v1.3.6

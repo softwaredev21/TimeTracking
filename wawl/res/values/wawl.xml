@@ -1,0 +1,34 @@
+﻿<resources>
+    <!-- Wawl strings -->
+    <string name="app_www_source" translatable="false">https://github.com/gsantner/kimai-android</string>
+    <string name="info_additionalContact" translatable="false">Kimai Homepage</string>
+    <string name="page_additional_homepage" translatable="false">http://www.kimai.org/</string>
+    <string name="default_path_filename" translatable="false">index.php</string>
+    <string name="default_username" translatable="false">kimai</string>
+    <string name="default_path_domain_and_folder" translatable="false">https://demo.kimai.org</string>
+
+    <!-- Colors from Palette -->
+    <color name="primary">#3e2622</color>
+    <color name="primary_dark">#35221e</color>
+    <color name="primary_light">#8BC34A</color>
+    <color name="accent">#689F38</color>
+    <color name="secondary_text">#727272</color>
+    <!-- End colors from Palette -->
+
+    <string name="copyright_license_text_official" translatable="false"><![CDATA[
+        ### Copyright © 2014-2017
+        \n**Kimai TimeTracker contributors**
+        \n### Copyright © 2015-2017
+        \n**Cherry Android contributors**
+        \n
+        \n**Get the official version of Kimai TimeTracker:**
+        \n
+            [Source code](https://github.com/gsantner/kimai-android)
+        \n[Google Play](https://play.google.com/store/apps/details?id=de.live.gdev.timetracker)~°| [F-Droid](https://f-droid.org/repository/browse/?fdid=de.live.gdev.timetracker)
+        \n
+        \nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+        \n
+        \nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
+        \n
+    ]]></string>
+</resources>

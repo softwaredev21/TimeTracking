@@ -32,7 +32,7 @@
             android:key="@string/pref_key__profile_accept_all_ssl_certs"
             android:title="@string/accept_all_ssl_certificates" />
         <EditTextPreference
-            android:hint="@string/default_filename"
+            android:hint="@string/default_path_filename"
             android:key="@string/pref_key__profile_path_filename"
             android:title="@string/filename" />
 

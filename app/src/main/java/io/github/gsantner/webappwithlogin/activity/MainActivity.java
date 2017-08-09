@@ -1,8 +1,7 @@
-package de.live.gdev.timetracker.activity;
+package io.github.gsantner.webappwithlogin.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -23,8 +22,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
 
-import org.apache.http.util.EncodingUtils;
-
 import java.io.IOException;
 
 import butterknife.BindView;
@@ -33,30 +30,31 @@ import butterknife.OnClick;
 import butterknife.OnLongClick;
 import de.live.gdev.timetracker.BuildConfig;
 import de.live.gdev.timetracker.R;
-import de.live.gdev.timetracker.util.AppSettings;
-import de.live.gdev.timetracker.util.Helpers;
-import de.live.gdev.timetracker.util.HelpersA;
 import io.github.gsantner.opoc.util.SimpleMarkdownParser;
+import io.github.gsantner.webappwithlogin.util.AppSettings;
+import io.github.gsantner.webappwithlogin.util.Helpers;
+import io.github.gsantner.webappwithlogin.util.HelpersA;
+import wawl.WawlOverrides;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static final boolean LOAD_IN_DESKTOP_MODE = true;
 
     @BindView(R.id.web_view)
-    WebView webView;
+    public WebView webView;
 
     @BindView(R.id.toolbar)
-    Toolbar toolbar;
+    public Toolbar toolbar;
 
     @BindView(R.id.drawer_layout)
-    DrawerLayout drawer;
+    public DrawerLayout drawer;
 
     @BindView(R.id.nav_view)
-    NavigationView navigationView;
+    public NavigationView navigationView;
 
     @BindView(R.id.fab)
-    FloatingActionButton fab;
+    public FloatingActionButton fab;
 
-    AppSettings appSettings;
+    protected AppSettings appSettings;
 
     @Override
     @SuppressLint({"SetTextI18n", "SetJavaScriptEnabled"})
@@ -156,6 +154,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 webView.clearMatches();
                 webView.clearSslPreferences();
                 finish();
+                if (getResources().getBoolean(R.bool.should_exit_with_system_too)) {
+                    System.exit(0);
+                }
                 return true;
             }
             case R.id.action_reload: {
@@ -214,24 +215,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void loadWebapp(boolean doLogin) {
-        Uri url;
-        try {
-            url = Uri.parse(appSettings.getProfilePathFull());
-        } catch (Exception e) {
-            webView.loadData(getString(R.string.no_valid_path), "text/html", "UTF-16");
-            return;
-        }
-
-        String url_s = url.toString();
-        if (appSettings.isProfileEmpty()) {
-            webView.loadData(getString(R.string.no_valid_path), "text/html", "UTF-16");
-        } else {
-            webView.loadUrl(url_s);
-            if (doLogin) {
-                url_s += "?a=checklogin";
-                String postData = "name=" + appSettings.getProfileLoginUsername() + "&password=" + appSettings.getProfileLoginPassword();
-                this.webView.postUrl(url_s, EncodingUtils.getBytes(postData, "base64"));
-            }
-        }
+        WawlOverrides.loadWebapp(webView, appSettings, doLogin);
     }
 }
