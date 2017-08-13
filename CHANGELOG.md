@@ -1,5 +1,6 @@
 ### v1.3.7
 - Simplify shared code between Kimai TT and Cherry
+- New localization: Italian by @xDarkWolf
 - Update opoc
 
 ### v1.3.6

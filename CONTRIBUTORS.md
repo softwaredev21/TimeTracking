@@ -17,3 +17,4 @@ Where:
 * **[Gregor Santner](https://gsantner.github.io)**<br/>~° Current developer of Kimai TimeTracker
 * **[Naofumi Fukue](https://github.com/naofum)**<br/>~° Japanese translation
 * **[Poussinou](https://github.com/Poussinou)**<br/>~° French translation
+* **[xDarkWolf](https://github.com/xDarkWolf)**<br/>~° Italian translation
