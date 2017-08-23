@@ -21,4 +21,11 @@
     <string name="profile_2">Profil 2</string>
     <string name="profile_3">Profil 3</string>
     <string name="path_domain_and_directory">Chemin vers Kimai :</string>
-    </resources>
+    <string name="pref_desc__language">Change la langue de l\'application. Redémarrez l\'application pour que les changements prennent effet</string>
+    <string name="pref_title__language">Langue</string>
+    <string name="show_app_license">Afficher les licences</string>
+    <string name="show_third_party_licenses">icences tierces</string>
+    <string name="licenses">Licence</string>
+    <string name="contributors">Contributeurs</string>
+    <string name="changelog">Journal des modifications</string>
+</resources>

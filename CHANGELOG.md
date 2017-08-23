@@ -1,3 +1,9 @@
+### v1.3.8
+- Added: Option to change app language
+- Added: F-Droid: App screenshots
+- Updated: F-Droid: App metadata
+- Updated: Changelog text and visuals
+
 ### v1.3.7
 - Simplify shared code between Kimai TT and Cherry
 - New localization: Italian by @xDarkWolf
