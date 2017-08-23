@@ -157,4 +157,8 @@ public class AppSettings extends AppSettingsBase {
     public String getLanguage() {
         return getString(R.string.pref_key__language, "");
     }
+
+    public void setShowMainFab(boolean value) {
+        setBool(_prefApp, R.string.pref_key__show_main_fab, value);
+    }
 }

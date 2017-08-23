@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 512 512.00001"
+   width="512"
+   height="512"
+   version="1.1"
+   id="svg16"
+   sodipodi:docname="timetracker_launcher_v4.svg"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   inkscape:export-filename="/tmp/aatmp/ic_launcher.png"
+   inkscape:export-xdpi="192"
+   inkscape:export-ydpi="192">
+  <metadata
+     id="metadata22">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Temps</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs20" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1841"
+     inkscape:window-height="1009"
+     id="namedview18"
+     showgrid="false"
+     inkscape:zoom="0.921875"
+     inkscape:cx="-19.228061"
+     inkscape:cy="189.6639"
+     inkscape:window-x="79"
+     inkscape:window-y="29"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g14" />
+  <title
+     id="title2">Temps</title>
+  <g
+     stroke-linejoin="round"
+     stroke-linecap="round"
+     id="g14">
+    <path
+       d="M 265.25281,47.432827 264.63605,246.99294 367.31961,439.10375 C 554.53868,295.61829 462.95463,54.185062 265.25281,47.432827 Z"
+       id="path6"
+       inkscape:connector-curvature="0"
+       style="fill:#2bc737;stroke:#c5e1ac;stroke-width:40.21753693;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:3.00300002;paint-order:stroke fill markers" />
+    <path
+       d="M480.178 255.723c1.818 104.464-79.882 198.735-178.98 216.69-101.69 22.622-215.19-35.48-253.73-135.612-37.235-88.58-5.605-198.855 70.226-255.064 87.294-70.045 223.723-60.786 300.567 21.41 39.06 40.04 62.226 95.822 61.916 152.578z"
+       stroke-width="9.126"
+       stroke="#689f38"
+       fill="none"
+       id="path8"
+       style="stroke-width:25;stroke-miterlimit:4;stroke-dasharray:none;stroke:#259815;stroke-opacity:1" />
+    <path
+       d="M259.87 399.782l.467 71.098M35.407 256.453l75.447.935m144.543-219.83l-.64 78.756M398.04 254.536l77.85-1.69"
+       stroke-width="9.126"
+       stroke="#689f38"
+       fill-rule="evenodd"
+       fill="#fff"
+       id="path10"
+       style="stroke-width:25;stroke-miterlimit:4;stroke-dasharray:none;stroke:#259815;stroke-opacity:1" />
+    <path
+       d="m 364.677,63.477 -13.69,25.604 m 95.827,54.755 -22.816,16.312 m 27.38,200.256 -22.817,-11.225 M 362.33772,448.07312 350.1446,426.57809 M 147.88,445.003 l 16.038,-27.38 m -100.41,-54.757 22.816,-13.69 m -24.778,-200.78 29.343,20.38 m 54.754,-102.516 13.69,24.833"
+       id="path12"
+       style="fill:none;stroke:#259815;stroke-width:28;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:3.00300002;stroke-opacity:1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccc" />
+  </g>
+</svg>

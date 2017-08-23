@@ -70,10 +70,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.getMenu().findItem(R.id.action_donate_bitcoin).setVisible(!BuildConfig.IS_GPLAY_BUILD);
-        ((TextView) navigationView.getHeaderView(0).findViewById(R.id.navheader_subtext))
-                .setText("v" + Helpers.get().getAppVersionName());
         fab.setVisibility(appSettings.isShowMainFab() ? View.VISIBLE : View.GONE);
         appSettings.setReloadRequired(false);
+
+        if (appSettings.isAppFirstStart(false)){
+            appSettings.setShowMainFab(false);
+        }
 
         // Set web settings
         webView.setWebChromeClient(new WebChromeClient());
@@ -201,6 +203,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             recreate();
             return;
         }
+        ((TextView) navigationView.getHeaderView(0).findViewById(R.id.navheader_subtext))
+                .setText(getResources().getStringArray(R.array.entries__profiles)[appSettings.getSelectedProfileNr()]);
         loadWebapp(appSettings.isProfileAutoLogin());
     }
 

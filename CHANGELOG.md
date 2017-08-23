@@ -1,3 +1,7 @@
+### v1.3.9
+- Updated: Project icon
+- Added: Icons to settings
+
 ### v1.3.8
 - Added: Option to change app language
 - Added: F-Droid: App screenshots
