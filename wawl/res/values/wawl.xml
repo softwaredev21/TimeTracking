@@ -7,6 +7,8 @@
     <string name="default_username" translatable="false">kimai</string>
     <string name="default_path_domain_and_folder" translatable="false">https://demo.kimai.org</string>
 
+    <bool name="should_exit_with_system_too">false</bool>
+
     <!-- Colors from Palette -->
     <color name="primary">#3e2622</color>
     <color name="primary_dark">#35221e</color>

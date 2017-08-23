@@ -14,7 +14,7 @@
 
     <string name="donate_bitcoin">Faire un don en Bitcoin</string>
 
-<string name="enable_auto_login">Activer la connexion automatique</string>
+    <string name="enable_auto_login">Activer la connexion automatique</string>
     <string name="accept_all_ssl_certificates">Accepter tous les certificats SSL</string>
     <string name="profile_selection">Sélection du profil</string>
     <string name="profile_1">Défaut</string>
