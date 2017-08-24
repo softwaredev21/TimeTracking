@@ -1,5 +1,6 @@
 ﻿<resources>
     <!-- Wawl strings -->
+    <string name="app_name" translatable="false">Kimai</string>
     <string name="app_www_source" translatable="false">https://github.com/gsantner/kimai-android</string>
     <string name="info_additionalContact" translatable="false">Kimai Homepage</string>
     <string name="page_additional_homepage" translatable="false">http://www.kimai.org/</string>

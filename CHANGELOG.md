@@ -1,6 +1,9 @@
 ### v1.3.9
 - Updated: Project icon
+- Added: HTTP basic auth login support
 - Added: Icons to settings
+- Updated: F-Droid metadata
+- Updated: Readme layout
 
 ### v1.3.8
 - Added: Option to change app language
