@@ -53,7 +53,8 @@ If you like my work on <b>Kimai TimeTracker</b> and many other Open Source proje
 ## Licensing
 Project created and maintained by <a href="https://gsantner.github.io">Gregor Santner</a> since 2014.
 The code of the app is licensed MIT. Localization files and resources (string\*.xml) are licensed CC0 1.0.
-For more licensing informations, see [`3rd party licenses`](/app/src/main/res/raw/licenses_3rd_party.md).  
+For more licensing informations, see [`3rd party licenses`](/app/src/main/res/raw/licenses_3rd_party.md).
+Note that the projects [cherrymusic-android](https://github.com/gsantner/cherrymusic-android) and [kimai-android](https://github.com/gsantner/kimai-android) share the code base.
 
 
 ## Screenshots
