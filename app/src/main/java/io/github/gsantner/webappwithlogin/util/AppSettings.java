@@ -6,7 +6,7 @@ import android.text.TextUtils;
 
 import de.live.gdev.timetracker.BuildConfig;
 import de.live.gdev.timetracker.R;
-import io.github.gsantner.opoc.util.AppSettingsBase;
+import net.gsantner.opoc.util.AppSettingsBase;
 import io.github.gsantner.webappwithlogin.App;
 
 public class AppSettings extends AppSettingsBase {
