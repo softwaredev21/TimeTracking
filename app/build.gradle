@@ -49,7 +49,7 @@ android {
         }
 
         flavorTest {
-            applicationId "io.github.gsantner.kimaitt.test"
+            applicationId "net.gsantner.kimaitt_test"
             versionCode = Integer.parseInt(new Date().format('yyMMdd'))
             versionName = new Date().format('yyMMdd')
             buildConfigField "boolean", "IS_TEST_BUILD", "true"
