@@ -19,3 +19,4 @@ Where:
 * **[Poussinou](https://github.com/Poussinou)**<br/>~° French translation
 * **[xDarkWolf](https://github.com/xDarkWolf)**<br/>~° Italian translation
 * **[Victor Fisker](https://discord.gg/49dwg58)**<br/>~° Danish translation
+* **[Iskandar Setiadi](https://github.com/freedomofkeima)**<br/>~° Indonesian translation
