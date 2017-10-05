@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Some basics -->
-    <string name="settings">Натсройки</string>
+    <string name="settings">Настройки</string>
     <string name="login">Вход</string>
-    <string name="info">Инфо</string>
-    <string name="exit">Выхрд</string>
+    <string name="info">Информация</string>
+    <string name="exit">Выход</string>
     <string name="reload">Перезагрузить</string>
     <string name="username">Имя пользователя</string>
     <string name="password">Пароль</string>
