@@ -1,3 +1,6 @@
+### v1.3.11
+- Many new languages supported
+
 ### v1.3.10
 - Fixed: Language list when building outside of project root
 
