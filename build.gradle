@@ -34,7 +34,7 @@ task copyRepoFiles(type: Copy) {
     rename { String fileName -> fileName.replace(fileName, fileName.toLowerCase())  }
 } ; tasks.copyRepoFiles.execute()
 
-@SuppressWarnings(["UnnecessaryQualifiedReference", "SpellCheckingInspection"])
+@SuppressWarnings(["UnnecessaryQualifiedReference", "SpellCheckingInspection", "GroovyUnusedDeclaration"])
 static String[] getUsedAndroidLanguages() {
     Set<String> langs = new HashSet<>()
     new File('.').eachFileRecurse(groovy.io.FileType.DIRECTORIES) {
@@ -48,4 +48,13 @@ static String[] getUsedAndroidLanguages() {
         }
     }
     return langs.toArray(new String[langs.size()])
+}
+
+ext.getGitHash = { ->
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'rev-parse', 'HEAD'
+        standardOutput = stdout
+    }
+    return stdout.toString().trim()
 }
