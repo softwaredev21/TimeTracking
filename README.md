@@ -1,5 +1,6 @@
 [![GitHub release](https://img.shields.io/github/release/gsantner/kimai-android.svg)](https://github.com/gsantner/kimai-android/releases)
 [![Donate](https://img.shields.io/badge/donate-bitcoin-orange.svg)](https://gsantner.github.io/#donate)
+[![Donate LiberaPay](https://img.shields.io/badge/donate-liberapay-orange.svg)](https://liberapay.com/gsantner/donate)
 [![CircleCI](https://circleci.com/gh/gsantner/kimai-android.svg?style=shield)](https://circleci.com/gh/gsantner/kimai-android)
 [![Translate - with Stringlate](https://img.shields.io/badge/stringlate-translate-green.svg)](https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fkimai-android.git&name=Kimai%20TT&web=https%3A%2F%2Fgithub.com%2Fgsantner%2Fkimai-android)
 
@@ -40,9 +41,6 @@ The project is always open for contributions and accepts pull requests.
 The project uses [AOSP Java Code Style](https://source.android.com/source/code-style#follow-field-naming-conventions), with one exception: private members are `_camelCase` instead of `mBigCamel`. You may use Android Studios _auto reformat feature_ before sending a PR.
 
 Translations can be contributed on GitHub or via [E-Mail](https://gsantner.github.io/#contact). You can use Stringlate ([![Translate - with Stringlate](https://img.shields.io/badge/stringlate-translate-green.svg)](https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fkimai-android.git&name=Kimai%20TT&web=https%3A%2F%2Fgithub.com%2Fgsantner%2Fkimai-android)) to translate the project directly on your Android phone. It allows you to export as E-Mail attachement and to post on GitHub.
-
-If you like my work on <b>Kimai TimeTracker</b> and many other Open Source projects, consider a small donation to my bitcoin address:
-<a href="https://gsantner.github.io/#donate">1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</a>
 
 
 #### Resources

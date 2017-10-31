@@ -16,7 +16,7 @@
     <string name="no_valid_path"><![CDATA[<font size="38"><center><h1> Ruta no válida </h1></center></font> <font size="25"><br> Por favor, compruebe las opciones de configuración!</font>]]></string>
     <string name="ssl_webview_error_str"><![CDATA[<font size="38"><center><h1> Certificado SSL no válido </h1></center></font><font size="25"> <br> Existe una opción para aceptar todos los certificados SSL.<br><br><b> Caution:</b> Ignorar los errores de certificados es un riesgo de seguridad!</font>]]></string>
     <string name="ssl_toast_error">Certificado SSL no acceptado</string>
-    <string name="donate_bitcoin">Donar Bitcoin</string>
+    <string name="donate">Donar</string>
 
 
     <!-- Settings -->

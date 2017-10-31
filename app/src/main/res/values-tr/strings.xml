@@ -16,7 +16,7 @@
     <string name="no_valid_path"><![CDATA[<font size="38"><center><h1> Geçerli yol yok </h1></center></font> <font size="25"><br> Lütfen ayarlarınızı kontrol edin!</font>]]></string>
     <string name="ssl_webview_error_str"><![CDATA[<font size="38"><center><h1> Geçersiz SSL sertifikası </h1></center></font><font size="25"> <br> Tüm SSL sertifikalarını kabul etmek için bir seçenek vardır.<br><br><b> Dikkat:</b> Sertifika hatalarını yok saymak bir güvenlik riskidir!</font>]]></string>
     <string name="ssl_toast_error">SSL sertifikası kabul edilmedi</string>
-    <string name="donate_bitcoin">Bitcoin Bağışı Yap</string>
+    <string name="donate">Bağışı Yap</string>
 
 
     <!-- Settings -->
