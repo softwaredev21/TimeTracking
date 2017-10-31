@@ -1,3 +1,7 @@
+### v1.3.12
+- Added: Brazilian, Portoguese translation
+- Updated: Language settings option
+
 ### v1.3.11
 - Many new languages supported
 
