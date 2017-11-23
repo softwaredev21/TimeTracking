@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="settings">Iɣewwaṛen</string>
+    <string name="login">Tuqqna</string>
+    <string name="info">Ɣef</string>
+
+    <string name="exit">Qqen sakin mdel</string>
+    <string name="username">Isem n useqdac</string>
+    <string name="password">Awal uffir</string>
+    <string name="filename">Isem n ufaylu</string>
+    <string name="no_valid_path"><![CDATA[<font size="38"><center><h1> Ulac abrid ameɣtu </h1></center></font> <font size="25"><br> Ma ulac aɣilif, senqed iɣewwaṛen-ik!</font>]]></string>
+    <string name="ssl_webview_error_str"><![CDATA[<font size="38"><center><h1> Aselkin SSL mačči d ameɣtu</h1></center></font><font size="25"> <br> Yella usefran akken ad tqebleḍ akk iselkinen SSL.<br><br><b> Ɣur-k:</b> Ma tzegleḍ islkinen-agi ayagi yezmer ad d-yeglu s wayen n dir!</font>]]></string>
+    <string name="ssl_toast_error">Aselkin SSL ur yettwaqbel ara</string>
+
+    <string name="donate">Mudd tawsa</string>
+
+    <string name="enable_auto_login">Rmed tuqqna tawurmant</string>
+    <string name="accept_all_ssl_certificates">Qbel akk iselkinen SSL</string>
+    <string name="profile_selection">Fren amaɣnu</string>
+    <string name="profile_1">Amaɣnu 1</string>
+    <string name="profile_2">Amaɣnu 2</string>
+    <string name="profile_3">Amaɣnu 3</string>
+    <string name="path_domain_and_directory">Abrid ar Kimai :</string>
+    <string name="pref_desc__language">Beddel isem n tutlayt n ugrudem. Yessefk ad talseḍ tanekra n usnas akken teddu tutlaut tamaynut</string>
+    <string name="pref_title__language">Tutlayt</string>
+    <string name="show_app_license">Sken turagin</string>
+    <string name="show_third_party_licenses">Turagin seg wid kraḍ</string>
+    <string name="licenses">Turagt</string>
+    <string name="contributors">Iwiziwen</string>
+    <string name="changelog">Aɣmis n ibeddilen</string>
+</resources>
