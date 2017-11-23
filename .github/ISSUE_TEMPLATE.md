@@ -1,34 +1,13 @@
 #### General information
+<!-- App version can be e.g. v0.1.1
+     System e.g. Android 7.0.1, Nexus 5X -->
 
-* **Device:** eg Nexus 5, Samsung Galaxy S6
-* **Android Version:** eg Android 6.0.1 Stock or Android 4.2 CM
-* **App source:** eg F-Droid, PlayStore, self build (latest HEAD)
-* **App version:** eg 1.2.0, or commit
+* **App version:** 
+* **System:** 
 
-
-I have:
-- [ ] searched open and closed issues for duplicates
-- [ ] read <https://github.com/gsantner/kimai-android/blob/master/CONTRIBUTING.md>
-
-#### Steps to reproduce
-
-1. …
-2. …
-3. …
+#### Description
+What this is about, what happens and how. What needs to be done for it to happen.
 
 
-#### Expected result
-
-What is the expected output? What do you see instead?
-
-Upload screenshots via drag&drop if needed and apply resizing:
-`<img width="30%" height="30%" src="https://cloud.githubusercontent.com/assets/67..b55.jpg">`
-
-
-#### Debug output
-
-Please post the output of adb logcat. The log should begin with the start of Kimai TimeTracker and include all the steps it takes to reproduce the problem.
-
-````
-adb logcat -s de.live.gdev.timetracker
-````
+#### Log
+<!-- adb logcat -s de.live.gdev.timetracker -->
