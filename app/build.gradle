@@ -21,8 +21,8 @@ android {
         buildConfigField "String", "GITHASH", "\"${getGitHash()}\""
 
         applicationId "de.live.gdev.timetracker"
-        versionName "1.3.12"
-        versionCode 25
+        versionName "1.3.13"
+        versionCode 26
 
     }
 

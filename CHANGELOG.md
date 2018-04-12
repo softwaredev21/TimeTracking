@@ -1,3 +1,7 @@
+### v1.3.13
+- Updated: Settings to use appcompat
+- Updated: Android SDK and libs
+
 ### v1.3.12
 - Added: Brazilian, Portoguese translation
 - Updated: Language settings option
