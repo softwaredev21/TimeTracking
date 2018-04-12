@@ -10,7 +10,7 @@
  * ----------------------------------------------------------------------------
  */
 
- /*
+/*
  * Get updates:
  *  https://github.com/gsantner/onePieceOfCode/blob/master/java/aboutActivity/AboutActivity.java
  * A simple activity to show information about the app.
@@ -30,8 +30,9 @@ import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.TextView;
 
+import net.gsantner.opoc.format.markdown.SimpleMarkdownParser;
 import net.gsantner.opoc.util.ActivityUtils;
-import net.gsantner.opoc.util.SimpleMarkdownParser;
+import net.gsantner.webappwithlogin.util.ContextUtils;
 
 import java.io.IOException;
 
@@ -39,7 +40,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.live.gdev.timetracker.R;
-import net.gsantner.webappwithlogin.util.ContextUtils;
 
 @SuppressWarnings("unused")
 public class AboutActivity extends AppCompatActivity {

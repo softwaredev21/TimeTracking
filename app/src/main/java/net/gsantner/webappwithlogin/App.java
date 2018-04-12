@@ -3,6 +3,7 @@ package net.gsantner.webappwithlogin;
 import android.app.Application;
 
 import net.gsantner.webappwithlogin.util.AppSettings;
+
 import wawl.WawlOverrides;
 
 public class App extends Application {

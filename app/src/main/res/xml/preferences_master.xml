@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/settings">
 
     <PreferenceCategory android:title="@string/pref_title__general_settings">
         <ListPreference
@@ -12,18 +13,18 @@
             android:title="@string/profile_selection" />
 
         <CheckBoxPreference
-            android:icon="@drawable/ic_visibility_black_24dp"
             android:defaultValue="true"
+            android:icon="@drawable/ic_visibility_black_24dp"
             android:key="@string/pref_key__show_main_fab"
             android:title="@string/show_button_on_the_bottom" />
 
         <!--suppress AndroidDomInspection -->
-        <net.gsantner.opoc.ui.LanguagePreference
-            android:icon="@drawable/ic_language_black_24dp"
+        <net.gsantner.opoc.preference.LanguagePreferenceCompat
             android:defaultValue=""
+            android:icon="@drawable/ic_language_black_24dp"
             android:key="@string/pref_key__language"
             android:summary="@string/pref_desc__language"
-            android:title="@string/pref_title__language"/>
+            android:title="@string/pref_title__language" />
 
     </PreferenceCategory>
 

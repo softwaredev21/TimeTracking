@@ -4,13 +4,13 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 
-import net.gsantner.opoc.util.AppSettingsBase;
+import net.gsantner.opoc.preference.SharedPreferencesPropertyBackend;
 import net.gsantner.webappwithlogin.App;
 
 import de.live.gdev.timetracker.BuildConfig;
 import de.live.gdev.timetracker.R;
 
-public class AppSettings extends AppSettingsBase {
+public class AppSettings extends SharedPreferencesPropertyBackend {
     private SharedPreferences prefCurrentProfile;
 
     //#####################

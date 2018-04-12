@@ -8,6 +8,7 @@ if (enable_plugin_kotlin) {
 ext.version_setup_minSdk = 14
 
 android {
+    buildToolsVersion version_setup_buildTools
     compileSdkVersion version_setup_compileSdk
     flavorDimensions "default"
 
@@ -16,7 +17,7 @@ android {
         targetSdkVersion version_setup_targetSdk
         buildConfigField "boolean", "IS_TEST_BUILD", "false"
         buildConfigField "boolean", "IS_GPLAY_BUILD", "false"
-        buildConfigField "String[]", "APPLICATION_LANGUAGES", "${getUsedAndroidLanguages()}"
+        buildConfigField "String[]", "DETECTED_ANDROID_LOCALES", "${findUsedAndroidLocales()}"
         buildConfigField "String", "GITHASH", "\"${getGitHash()}\""
 
         applicationId "de.live.gdev.timetracker"
@@ -41,6 +42,11 @@ android {
         }
     }
 
+    sourceSets {
+        if (enable_plugin_kotlin) {
+            main.java.srcDirs += 'src/main/kotlin'
+        }
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -53,9 +59,16 @@ android {
         }
     }
 
-    lintOptions {
-        warning 'InvalidPackage'
-        disable 'MissingTranslation'
+    configurations.all {
+        resolutionStrategy {
+            eachDependency { details ->
+                if (details.requested.group == 'com.android.support') {
+                    if (details.requested.name != 'multidex' && details.requested.name != 'multidex-instrumentation') {
+                        details.useVersion "${version_library_appcompat}"
+                    }
+                }
+            }
+        }
     }
 
     packagingOptions {
@@ -63,6 +76,11 @@ android {
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/NOTICE.txt'
         exclude 'META-INF/DEPENDENCIES'
+    }
+
+    lintOptions {
+        disable 'MissingTranslation'
+        disable 'InvalidPackage'
     }
 
     sourceSets {
@@ -87,6 +105,8 @@ dependencies {
     implementation "com.android.support:appcompat-v7:${version_library_appcompat}"
     implementation "com.android.support:design:${version_library_appcompat}"
     implementation "com.android.support:support-v4:${version_library_appcompat}"
+    implementation "com.android.support:preference-v7:${version_library_appcompat}"
+    implementation "com.android.support:preference-v14:${version_library_appcompat}"
 
     // Tool libraries
     implementation 'org.apache.httpcomponents:httpcore:4.4.3'

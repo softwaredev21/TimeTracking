@@ -1,21 +1,26 @@
 package net.gsantner.webappwithlogin.activity;
 
 import android.annotation.SuppressLint;
-import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.PreferenceFragment;
-import android.preference.PreferenceScreen;
 import android.support.design.widget.AppBarLayout;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceFragmentCompat;
+import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
+
+import net.gsantner.opoc.preference.GsPreferenceFragmentCompat;
+import net.gsantner.opoc.preference.SharedPreferencesPropertyBackend;
+import net.gsantner.webappwithlogin.util.AppSettings;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.live.gdev.timetracker.R;
-import net.gsantner.webappwithlogin.util.AppSettings;
 
 public class SettingsActivity extends AppCompatActivity {
     @BindView(R.id.settings_appbar)
@@ -40,7 +45,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     protected void showFragment(String tag, boolean addToBackStack) {
-        PreferenceFragment fragment = (PreferenceFragment) getFragmentManager().findFragmentByTag(tag);
+        GsPreferenceFragmentCompat fragment = (GsPreferenceFragmentCompat) getSupportFragmentManager().findFragmentByTag(tag);
         Integer profileFragmentNrToShow = null;
         if (fragment == null) {
             switch (tag) {
@@ -62,42 +67,39 @@ public class SettingsActivity extends AppCompatActivity {
         }
         if (profileFragmentNrToShow != null) {
             fragment = new SettingsFragmentProfile();
-            ((SettingsFragmentProfile) fragment).setProfileNr(profileFragmentNrToShow);
+            Bundle bundle = new Bundle();
+            bundle.putInt(SettingsFragmentProfile.TAG, profileFragmentNrToShow);
+            fragment.setArguments(bundle);
             toolbar.setTitle(getResources().getStringArray(R.array.entries__profiles)[profileFragmentNrToShow]);
         }
 
-        FragmentTransaction t = getFragmentManager().beginTransaction();
+        FragmentTransaction t = getSupportFragmentManager().beginTransaction();
         if (addToBackStack) {
             t.addToBackStack(tag);
         }
         t.replace(R.id.settings_fragment_container, fragment, tag).commit();
     }
 
-    public static class SettingsFragmentMaster extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener {
+    public static class SettingsFragmentMaster extends GsPreferenceFragmentCompat {
         public static final String TAG = "settings.SettingsFragmentMaster";
-        private AppSettings appSettings;
 
-        public void onCreate(Bundle savedInstances) {
-            super.onCreate(savedInstances);
-            getPreferenceManager().setSharedPreferencesName("app");
-            addPreferencesFromResource(R.xml.preferences_master);
-            appSettings = AppSettings.get();
+        @Override
+        public int getPreferenceResourceForInflation() {
+            return R.xml.preferences_master;
         }
 
         @Override
-        public void onPause() {
-            appSettings.unregisterPreferenceChangedListener(this);
-            super.onPause();
+        public String getFragmentTag() {
+            return TAG;
         }
 
         @Override
-        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-            appSettings.setReloadRequired(true);
-            loadSummaries();
+        protected SharedPreferencesPropertyBackend getAppSettings(Context context) {
+            return AppSettings.get();
         }
 
         @Override
-        public boolean onPreferenceTreeClick(PreferenceScreen screen, Preference preference) {
+        public Boolean onPreferenceClicked(Preference preference) {
             if (isAdded() && preference.hasKey()) {
                 AppSettings settings = AppSettings.get();
                 String key = preference.getKey();
@@ -113,19 +115,10 @@ public class SettingsActivity extends AppCompatActivity {
                     return true;
                 }
             }
-            return super.onPreferenceTreeClick(screen, preference);
+            return false;
         }
 
-        @Override
-        @SuppressLint("DefaultLocale")
-        public void onResume() {
-            super.onResume();
-            ((SettingsActivity) getActivity()).toolbar.setTitle(R.string.title_activity_settings);
-            appSettings.registerPreferenceChangedListener(this);
-            loadSummaries();
-        }
-
-        public void loadSummaries() {
+        public void updateSummaries() {
             AppSettings appSettings = AppSettings.get();
             String selectedProfile = getResources().getStringArray(R.array.entries__profiles)[appSettings.getSelectedProfileNr()];
 
@@ -140,63 +133,73 @@ public class SettingsActivity extends AppCompatActivity {
                     pref.setSummary(appSettings.getProfileSummary());
                 }
             }
-
             appSettings.loadProfile(appSettings.getSelectedProfileNr());
+        }
+
+
+        @Override
+        protected void onPreferenceScreenChanged(PreferenceFragmentCompat preferenceFragmentCompat, PreferenceScreen preferenceScreen) {
+            super.onPreferenceScreenChanged(preferenceFragmentCompat, preferenceScreen);
+            if (!TextUtils.isEmpty(preferenceScreen.getTitle())) {
+                SettingsActivity a = (SettingsActivity) getActivity();
+                if (a != null) {
+                    a.toolbar.setTitle(preferenceScreen.getTitle());
+                }
+            }
         }
     }
 
 
-    public static class SettingsFragmentProfile extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener {
+    public static class SettingsFragmentProfile extends GsPreferenceFragmentCompat {
+        public static final String TAG = "settings.SettingsFragmentProfile";
         public static final String TAG0 = "settings.SettingsFragmentProfile0";
         public static final String TAG1 = "settings.SettingsFragmentProfile1";
         public static final String TAG2 = "settings.SettingsFragmentProfile2";
 
-        private AppSettings appSettings;
-        private int profileNr;
+        private AppSettings _appSettings;
+        private int _profileNr = 0;
 
-        public void onCreate(Bundle savedInstances) {
-            super.onCreate(savedInstances);
-            getPreferenceManager().setSharedPreferencesName("Profile" + profileNr);
-            addPreferencesFromResource(R.xml.preferences_profile);
-            appSettings = AppSettings.get();
-            appSettings.loadProfile(profileNr);
-        }
-
-        public void setProfileNr(int profileNr) {
-            this.profileNr = profileNr;
+        @Override
+        public int getPreferenceResourceForInflation() {
+            return R.xml.preferences_profile;
         }
 
         @Override
-        public boolean onPreferenceTreeClick(PreferenceScreen screen, Preference preference) {
-            if (isAdded() && preference.hasKey()) {
-                String key = preference.getKey();
+        public String getFragmentTag() {
+            return TAG + _profileNr;
+        }
+
+        @Override
+        public String getSharedPreferencesName() {
+            return "Profile" + getArguments().getInt(TAG, 0);
+        }
+
+        @Override
+        protected SharedPreferencesPropertyBackend getAppSettings(Context context) {
+            return AppSettings.get();
+        }
+
+
+        @Override
+        protected void afterOnCreate(Bundle savedInstances, Context context) {
+            super.afterOnCreate(savedInstances, context);
+            if (getArguments() != null) {
+                _profileNr = getArguments().getInt(TAG, 0);
             }
-            return super.onPreferenceTreeClick(screen, preference);
+            _appSettings = AppSettings.get();
+            _appSettings.loadProfile(_profileNr);
         }
 
         @Override
-        public void onResume() {
-            super.onResume();
-            appSettings.registerPreferenceChangedListener(appSettings.getSharedPreferenceCurrentProfile(), this);
-            loadSummaries();
+        protected void onPreferenceChanged(SharedPreferences prefs, String key) {
+            super.onPreferenceChanged(prefs, key);
+            _appSettings.setReloadRequired(true);
         }
 
-        @Override
-        public void onPause() {
-            appSettings.unregisterPreferenceChangedListener(appSettings.getSharedPreferenceCurrentProfile(), this);
-            super.onPause();
-        }
-
-        public void loadSummaries() {
-            findPreference(getString(R.string.pref_key__profile_path_domain_and_directory)).setSummary(appSettings.isProfileEmpty() ? "" : appSettings.getProfilePathDomainAndDirectory());
-            findPreference(getString(R.string.pref_key__profile_path_filename)).setSummary(appSettings.getProfilePathFilename());
-            findPreference(getString(R.string.pref_key__profile_login_username)).setSummary(appSettings.getProfileLoginUsername());
-        }
-
-        @Override
-        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-            appSettings.setReloadRequired(true);
-            loadSummaries();
+        public void updateSummaries() {
+            findPreference(getString(R.string.pref_key__profile_path_domain_and_directory)).setSummary(_appSettings.isProfileEmpty() ? "" : _appSettings.getProfilePathDomainAndDirectory());
+            findPreference(getString(R.string.pref_key__profile_path_filename)).setSummary(_appSettings.getProfilePathFilename());
+            findPreference(getString(R.string.pref_key__profile_login_username)).setSummary(_appSettings.getProfileLoginUsername());
         }
     }
 }

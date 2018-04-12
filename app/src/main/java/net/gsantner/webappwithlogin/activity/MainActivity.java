@@ -24,8 +24,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
 
+import net.gsantner.opoc.format.markdown.SimpleMarkdownParser;
 import net.gsantner.opoc.util.ActivityUtils;
-import net.gsantner.opoc.util.SimpleMarkdownParser;
 import net.gsantner.webappwithlogin.util.AppSettings;
 import net.gsantner.webappwithlogin.util.ContextUtils;
 
