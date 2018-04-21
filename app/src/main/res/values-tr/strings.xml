@@ -13,7 +13,8 @@
     <string name="changelog">Değişklik Günlüğü</string>
 
     <!-- Main -->
-    <string name="no_valid_path"><![CDATA[<font size="38"><center><h1> Geçerli yol yok </h1></center></font> <font size="25"><br> Lütfen ayarlarınızı kontrol edin!</font>]]></string>
+	<!-- Translate "left" to "right" if your language is right-to-left (e.g. Arabic) -->
+	<string name="no_valid_path"><![CDATA[<font size="38"><center><h1> No valid path </h1></center></font> <font size="25"><br> Lütfen ayarlarınızı kontrol etmek için sola kaydırın!</font>]]></string>
     <string name="ssl_webview_error_str"><![CDATA[<font size="38"><center><h1> Geçersiz SSL sertifikası </h1></center></font><font size="25"> <br> Tüm SSL sertifikalarını kabul etmek için bir seçenek vardır.<br><br><b> Dikkat:</b> Sertifika hatalarını yok saymak bir güvenlik riskidir!</font>]]></string>
     <string name="ssl_toast_error">SSL sertifikası kabul edilmedi</string>
     <string name="donate">Bağışı Yap</string>
