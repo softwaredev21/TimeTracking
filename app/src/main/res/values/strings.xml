@@ -2,7 +2,7 @@
 <resources>
     <!-- Some basics -->
     <string name="settings">Settings</string>
-    <string name="login">Login</string>
+    <string name="login">Log in</string>
     <string name="info">About</string>
     <string name="exit">Exit</string>
     <string name="reload">Reload</string>
@@ -16,7 +16,7 @@
     <!-- Translate "left" to "right" if your language is right-to-left (e.g. Arabic) -->
     <string name="no_valid_path"><![CDATA[<font size="38"><center><h1> No valid path </h1></center></font> <font size="25"><br> Please swipe from the left side to check your settings!</font>]]></string>
     <string name="ssl_webview_error_str"><![CDATA[<font size="38"><center><h1> Invalid SSL certificate </h1></center></font><font size="25"> <br> There is a option for accepting all SSL certificates.<br><br><b> Caution:</b> Ignoring certificate errors is a security risk!</font>]]></string>
-    <string name="ssl_toast_error">SSL certificate not accepted</string>
+    <string name="ssl_toast_error">SSL certificate rejected</string>
     <string name="donate">Donate</string>
 
 
