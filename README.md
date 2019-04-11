@@ -4,6 +4,8 @@
 [![Build Status](https://travis-ci.org/gsantner/kimai-android.svg?branch=master)](https://travis-ci.org/gsantner/kimai-android)
 [![Translate - with Stringlate](https://img.shields.io/badge/stringlate-translate-green.svg)](https://lonamiwebs.github.io/stringlate/translate?git=https%3A%2F%2Fgithub.com%2Fgsantner%2Fkimai-android.git&name=Kimai%20TT&web=https%3A%2F%2Fgithub.com%2Fgsantner%2Fkimai-android)
 
+**Notice**: Project is not in active development, don't expect new features or fixes. The project is still maintained and is open for merge requests (contributions are welcome).
+
 # Kimai TimeTracker
 <img src="/wawl/ic_launcher-web.png" align="left" width="100" hspace="10" vspace="10">
 Android app for the time managment application <a href="http://www.kimai.org/">Kimai</a>.
